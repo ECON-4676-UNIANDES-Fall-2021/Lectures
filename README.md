@@ -2,6 +2,6 @@
 ### Check the Syllabus [here](https://github.com/ECON-4676-UNIANDES-Fall-2021/Syllabus)
 
 
-## Lecture outline and quicklinks
+## Lecture outline and quick links
 
 1. Lecture 1 \[[Slides]()\] 
