@@ -4,4 +4,4 @@
 
 ## Lecture outline and quick links
 
-1. Lecture 1 \[[Slides]()\] 
+1. Lecture 1 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture1/Lecture1.pdf)\] 
