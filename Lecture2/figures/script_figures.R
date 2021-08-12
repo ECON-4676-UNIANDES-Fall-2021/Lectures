@@ -45,10 +45,34 @@ ggsave("fig_1c.pdf",height = 7, width = 12)
 # # -----------------------------------------------------------------------
 # Risk Example ------------------------------------------------------------
 # # -----------------------------------------------------------------------
+require("dplyr")
+require("tidyr")
+p_star<-seq(0,1,0.01)
 
-p<-seq(0,1,0.01)
-n<-c(4,400,4000)
-p1<-function(p) p*(1-p)/2
-p2<-function(p,n) n/(4*(n+sqrt(n))^2)
+p1<-function(p,n){
+  p*(1-p)/n
+}
+
+p2<-function(p,n){
+  n/(4*(n+sqrt(n))^2)
+} 
+
+db_risk1<-tibble(p=p_star,n=4)%>% 
+            mutate(p1=p1(p,n),p2=p2(p,n)) %>% 
+            pivot_longer(c(p1,p2),names_to="Estimators",values_to= "Risk")
 
 
+ggplot(db_risk1) +
+  geom_line(aes(x=p,y=Risk,group=Estimators,col=Estimators)) +
+  theme_classic() 
+ggsave("fig_2a.pdf",height = 7, width = 12)
+  
+db_risk2<-tibble(p=p_star,n=400)%>% 
+  mutate(p1=p1(p,n),p2=p2(p,n)) %>% 
+  pivot_longer(c(p1,p2),names_to="Estimators",values_to= "Risk")
+
+
+ggplot(db_risk2) +
+  geom_line(aes(x=p,y=Risk,group=Estimators,col=Estimators)) +
+  theme_classic() 
+ggsave("fig_2b.pdf",height = 7, width = 12)
