@@ -91,7 +91,7 @@ beta2[[i-1]]
 
 for(j in c(2,3,4,5,7211)){
   p+
-    geom_abline(intercept = beta1[[j]], slope = beta2[[j]], col="red",lty="dashed")
+    geom_abline(intercept = beta1[[j]], slope = beta2[[j]],size=3, col="red",lty="dashed")
   ggsave(paste0("fig_1_",j,".pdf"),height = 7, width = 12)
   print(beta1[[j]])
   print(beta2[[j]])
