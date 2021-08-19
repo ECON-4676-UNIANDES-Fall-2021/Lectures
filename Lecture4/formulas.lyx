@@ -1,0 +1,343 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+The Loss Function
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+SSR=
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+z
+\begin_inset Formula 
+\[
+SSR=f(x)=\sum_{i=1}^{n}(y_{i}-(\alpha+\beta x_{i}))^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+the gradient
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\nabla f(x)=\left(\begin{array}{c}
+\frac{\partial f}{\partial\alpha}\\
+\frac{\partial f}{\partial\beta}
+\end{array}\right)=\left(\begin{array}{c}
+-2\sum_{i=1}^{n}(y_{i}-\alpha-\beta x_{i})\\
+-2\sum_{i=1}^{n}x_{i}(y_{i}-\alpha-\beta x_{i})
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha'=\alpha-\epsilon\frac{\partial f}{\partial\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta'=\beta-\epsilon\frac{\partial f}{\partial\beta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Start with an initial guess: 
+\begin_inset Formula $\alpha=-1;\beta=2$
+\end_inset
+
+ , and a learning rate (
+\begin_inset Formula $\epsilon=0.005$
+\end_inset
+
+).
+ Then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha'=(-1)-0.005\left(-2\left((5-(-1)-2\times8)+(10-(-1)-2\times12\right)+(12.5-(-1)-2\times16)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta'=2+0.005\left(-2\left(8(5-(-1)-2\times8)+12(10-(-1)-2\times12\right)+16(12.5-(-1)-2\times16)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\alpha'=-1.1384
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\beta'=0.2266
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next Iteration
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha''=(-1.1384)-0.005\left(-2\left((5-(-1.1384)-(0.2266)\times8)+(10-(-1.1384)-(0.2266)\times12\right)+(12.5-(-1.1384)-(0.2266)\times16)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta''=(0.2266)+0.005\left(-2\left(8(5-(-1.1384)-(0.2266)\times8)+12(10-(-1.1384)-(0.2266)\times12\right)+16(12.5-(-1.1384)-(0.2266)\times16)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\alpha''=-1.0624
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\beta''=1.212689
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Converged to 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha^{*}=-2.0762
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\beta^{*}=0.9369
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
