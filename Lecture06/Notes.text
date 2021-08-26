@@ -1,0 +1,38 @@
+CHAPTER 8. OPTIMIZATION FOR TRAINING DEEP MODELS
+Thus for a locally quadratic function (with positive deﬁnite
+H
+), by rescaling
+the gradient by
+H
+−1
+, Newton’s method jumps directly to the minimum. If the
+objective function is convex but not quadratic (there are higher-order terms), this
+update can be iterated, yielding the training algorithm associated with Newton’s
+method, given in algorithm 8.8.
+For surfaces that are not quadratic, as long as the Hessian remains positive
+deﬁnite, Newton’s method can be applied iteratively. This implies a two-step
+iterative procedure. First, update or compute the inverse Hessian (i.e., by updat-
+ing the quadratic approximation). Second, update the parameters according to
+equation
+
+
+Beyond the challenges created by certain features of the objective function,
+such as saddle points, the application of Newton’s method for training large neural
+networks is limited by the signiﬁcant computational burden it imposes. The
+number of elements in the Hessian is squared in the number of parameters, so with
+k
+parameters (and for even very small neural networks, the number of parameters
+k
+can be in the millions), Newton’s method would require the inversion of a
+k × k
+matrix—with computational complexity of
+O
+(
+k
+3
+). Also, since the parameters will
+change with every update, the inverse Hessian has to be computed at every training
+iteration. As a consequence, only networks with a very small number of parameters
+can be practically trained via Newton’s method. In the remainder of this section,
+we discuss alternatives that attempt to gain some of the advantages of Newton’s
+method while side-stepping the computational hurdles.
