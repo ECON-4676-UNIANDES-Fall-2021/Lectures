@@ -243,24 +243,6 @@
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Maximum Likelihood Estimation}
-
-Let $X_1,\dots,X_n\sim_{iid}f(x|\theta)$, the likelihood function is defined by
-
-\begin{align}\label{eq:1}
-\mathcal{L}(\theta|x)=\Pi_{i=1}^n \mathcal{L}(\theta|x)=\Pi_{i=1}^n f(x_i|\theta)
-\end{align}
-
-A maximum likelihood estimator of the parameter $\theta$:
-
-\begin{align}
-\hat \theta^{MLE}=\underset{\theta \in \Theta}{argmax}\, \mathcal{L}(\theta|x)(\theta,x)
-\end{align}
-
-
-\end{frame}
-%----------------------------------------------------------------------%
-\begin{frame}[fragile]
-\frametitle{Maximum Likelihood Estimation}
 \framesubtitle{Example}
 
 \begin{itemize}
@@ -282,6 +264,26 @@ A maximum likelihood estimator of the parameter $\theta$:
 \medskip
    \item Intuition?
 \end{itemize}
+
+\end{frame}
+%----------------------------------------------------------------------%
+
+
+\begin{frame}[fragile]
+\frametitle{Maximum Likelihood Estimation}
+
+Let $X_1,\dots,X_n\sim_{iid}f(x|\theta)$, the likelihood function is defined by
+
+\begin{align}\label{eq:1}
+\mathcal{L}(\theta|x)=\Pi_{i=1}^n \mathcal{L}(\theta|x)=\Pi_{i=1}^n f(x_i|\theta)
+\end{align}
+
+A maximum likelihood estimator of the parameter $\theta$:
+
+\begin{align}
+\hat \theta^{MLE}=\underset{\theta \in \Theta}{argmax}\, \mathcal{L}(\theta|x)(\theta,x)
+\end{align}
+
 
 \end{frame}
 %----------------------------------------------------------------------%
@@ -350,7 +352,7 @@ If the likelihood function is differentiable (in $\theta$) a possible candidate 
 Here
 
 \begin{align}
-L(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
+\mathcal{L}(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
 \end{align}
 
 
@@ -379,7 +381,7 @@ FOC
 
 
 \begin{align}
-\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)=0
+\sum_{i=1}^{n}\left(x_{i}-\mu\right)=0
 \end{align}
 
 then
@@ -528,12 +530,6 @@ l(\beta,Y)=\sum_{i=1}^n\left(y_i \ln F(X_i\beta)+(1-y_i)\ln(1-F(X_i\beta))\right
 \frametitle{Example 2}
 FOC
 \begin{align}
-\left(\begin{array}{c}
-k\\
-2
-\end{array}\right)=\frac{k(k-1)}{2}
-\end{align}
-\begin{align}
 \frac{\partial l(\beta|y,X)}{\partial\beta}&=0 
 \end{align}
 \begin{align}
@@ -553,7 +549,7 @@ $\vdots$
 \end{centering}
 
 \begin{align}
-\sum_{i=1}^n\frac{(y_i-F(X_{i}'\beta))f(X_{i}'\beta)x_i}{F(X_{i}'\beta)(1-F(X_{i}'\beta))}=0
+\sum_{i=1}^n\frac{(y_i-F(X_{i}'\beta))f(X_{i}'\beta)}{F(X_{i}'\beta)(1-F(X_{i}'\beta))}=0
 \end{align}
 
 \bigskip
