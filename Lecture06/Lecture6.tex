@@ -223,7 +223,7 @@
 \begin{itemize}
 \item Let $X$ be a random variable with density $f(x,\theta)$ 
 \medskip
-\item And $X_1,\dots,X_n$ and iid sample $sim_{iid}f(x|\theta)$
+\item And $X_1,\dots,X_n$ and iid sample $\sim_{iid}f(x|\theta)$
 \medskip
 \item The likelihood function for $X$ is
 \medskip
@@ -257,9 +257,9 @@
  \item Then 
  \medskip
    \begin{itemize}
-     \item  $f(x|\theta) : \mathbb{R}\rightarrow  \mathbb{R}$ and $f(x,\theta)=\frac{1}{\sqrt{2\pi\sigma}}exp\left(- \frac{(x-\mu)^2}{2\sigma^2} \right)$
+     \item  $f(x|\theta) : \mathbb{R}\rightarrow  \mathbb{R}$ and $f(x,\theta)=\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(- \frac{(x-\mu)^2}{2\sigma^2} \right)$
      \medskip
-     \item  $ \mathcal{L}(\theta|x) : \mathbb{R}^2 \rightarrow  \mathbb{R}$ and  $\mathcal{L}(\theta|x) =\frac{1}{\sqrt{2\pi\sigma}}exp\left(- \frac{(x-\mu)^2}{2\sigma^2} \right)$
+     \item  $ \mathcal{L}(\theta|x) : \mathbb{R}^2 \rightarrow  \mathbb{R}$ and  $\mathcal{L}(\theta|x) =\frac{1}{\sqrt{2\pi\sigma^{2}}}exp\left(- \frac{(x-\mu)^2}{2\sigma^2} \right)$
    \end{itemize}
 \medskip
    \item Intuition?
@@ -347,7 +347,7 @@ If the likelihood function is differentiable (in $\theta$) a possible candidate 
 \begin{frame}[fragile]
 \frametitle{Maximum Likelihood Estimation}
 
- Let $X_1,\dots,X_n \sim N(\mu,1)$. We want to estimate $\theta = \mu$
+ Let $X_1,\dots,X_n \sim_{iid} N(\mu,1)$. We want to estimate $\theta = \mu$
 
 Here
 
@@ -381,7 +381,7 @@ FOC
 
 
 \begin{align}
-\sum_{i=1}^{n}\left(x_{i}-\mu\right)=0
+\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)=0
 \end{align}
 
 then
@@ -462,7 +462,7 @@ Since we assumed that obs are $iid$, then the log likelihood
 
 \begin{align}
 l(y|\beta,\sigma,X) &=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-X_i\beta)^2  \\
-&=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}(y-X\beta)'y-X\beta)
+&=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}(y-X\beta)'(y-X\beta)
 \end{align}
 The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 
@@ -475,13 +475,13 @@ The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 The first step in maximizing $l(y|\beta,\sigma,X)$ is to {\bf concentrate} it with respect to $\sigma$
 
 \begin{align}
-\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}-\frac{1}{\sigma^3}(y-X\beta)'y-X\beta)=0
+\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}-\frac{1}{\sigma^3}(y-X\beta)'(y-X\beta)=0
 \end{align}
 
 Solving for $\sigma^2$
 
 \begin{align}
-\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'y-X\beta)
+\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'(y-X\beta)
 \end{align}
 
 \end{frame}
@@ -494,14 +494,14 @@ Solving for $\sigma^2$
 Replacing this in the log likelihood we get the concentrated (profile) likelihood
 
 \begin{align}
-l^c(y|\beta,X) = -\frac{n}{2}log 2 \pi-\frac{n}{2}log\left( \frac{1}{n}(y-X\beta)'y-X\beta)\right)-\frac{n}{2}
+l^c(y|\beta,X) = -\frac{n}{2}log 2 \pi-\frac{n}{2}log\left( \frac{1}{n}(y-X\beta)'(y-X\beta)\right)-\frac{n}{2}
 \end{align}
 
 \medskip
 
 \begin{enumerate}
  \item Get $\hat \beta$
- \item Replace $\beta$ in $\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'y-X\beta)$ $\rightarrow$ get $\hat \sigma^2$
+ \item Replace $\beta$ in $\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'(y-X\beta)$ $\rightarrow$ get $\hat \sigma^2$
 \end{enumerate}
 
 \medskip
@@ -530,6 +530,12 @@ l(\beta,Y)=\sum_{i=1}^n\left(y_i \ln F(X_i\beta)+(1-y_i)\ln(1-F(X_i\beta))\right
 \frametitle{Example 2}
 FOC
 \begin{align}
+\left(\begin{array}{c}
+k\\
+2
+\end{array}\right)=\frac{k(k-1)}{2}
+\end{align}
+\begin{align}
 \frac{\partial l(\beta|y,X)}{\partial\beta}&=0 
 \end{align}
 \begin{align}
@@ -549,7 +555,7 @@ $\vdots$
 \end{centering}
 
 \begin{align}
-\sum_{i=1}^n\frac{(y_i-F(X_{i}'\beta))f(X_{i}'\beta)}{F(X_{i}'\beta)(1-F(X_{i}'\beta))}=0
+\sum_{i=1}^n\frac{(y_i-F(X_{i}'\beta))f(X_{i}'\beta)x_i}{F(X_{i}'\beta)(1-F(X_{i}'\beta))}=0
 \end{align}
 
 \bigskip
@@ -787,6 +793,8 @@ Note:
 
 %----------------------------------------------------------------------%
 %----------------------------------------------------------------------%
+
+
 
 
 
