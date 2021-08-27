@@ -462,7 +462,7 @@ Since we assumed that obs are $iid$, then the log likelihood
 
 \begin{align}
 l(y|\beta,\sigma,X) &=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-X_i\beta)^2  \\
-&=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}(y-X\beta)'y-X\beta)
+&=-\frac{n}{2}log 2 \pi-\frac{n}{2}log\sigma^2-\frac{1}{2\sigma^2}(y-X\beta)('y-X\beta)
 \end{align}
 The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 
@@ -475,13 +475,13 @@ The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 The first step in maximizing $l(y|\beta,\sigma,X)$ is to {\bf concentrate} it with respect to $\sigma$
 
 \begin{align}
-\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}-\frac{1}{\sigma^3}(y-X\beta)'y-X\beta)=0
+\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}-\frac{1}{\sigma^3}(y-X\beta)('y-X\beta)=0
 \end{align}
 
 Solving for $\sigma^2$
 
 \begin{align}
-\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'y-X\beta)
+\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)('y-X\beta)
 \end{align}
 
 \end{frame}
@@ -494,14 +494,14 @@ Solving for $\sigma^2$
 Replacing this in the log likelihood we get the concentrated (profile) likelihood
 
 \begin{align}
-l^c(y|\beta,X) = -\frac{n}{2}log 2 \pi-\frac{n}{2}log\left( \frac{1}{n}(y-X\beta)'y-X\beta)\right)-\frac{n}{2}
+l^c(y|\beta,X) = -\frac{n}{2}log 2 \pi-\frac{n}{2}log\left( \frac{1}{n}(y-X\beta)('y-X\beta)\right)-\frac{n}{2}
 \end{align}
 
 \medskip
 
 \begin{enumerate}
  \item Get $\hat \beta$
- \item Replace $\beta$ in $\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)'y-X\beta)$ $\rightarrow$ get $\hat \sigma^2$
+ \item Replace $\beta$ in $\hat \sigma^2(\beta) = \frac{1}{n}(y-X\beta)('y-X\beta)$ $\rightarrow$ get $\hat \sigma^2$
 \end{enumerate}
 
 \medskip
