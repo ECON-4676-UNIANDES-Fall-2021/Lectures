@@ -235,7 +235,7 @@ y = X \beta +u
 
 \begin{align}
 y_i &= X_i \beta +u_i  \\ \nonumber
-    &= \sum_{j=1}^k \beta_j X_{ji} +u_i
+y_i &= \sum_{j=1}^k \beta_j X_{ji} +u_i
 \end{align}
 \end{itemize}
 \end{frame}
@@ -386,11 +386,11 @@ Under certain assumptions {\tiny HW Review the Assumption from Econometrics}
 \begin{itemize}
   \item The OLS estimator ($\hat \beta$) is BLUE, the more efficient than any other linear unbiased estimator, 
   \medskip
-  \item Efficiency in the sense that  $Var(\tilde \beta) - Var(\hat \beta)$ is positive semidefinite matrix.
+  \item Efficiency in the sense that  $Var(\tilde \beta) - Var(\hat \beta)$ is a positive semidefinite matrix.
 \end{itemize}
 
 \bigskip
-\tiny Proof: HW. Remember: a matrix $M_{p\times p}$ is positive semi-definite iff $c'Mc\geq0$ $\forall x\in \mathbb{R}^p$
+\tiny Proof: HW. Remember: a matrix $M_{p\times p}$ is positive semi-definite iff $c'Mc\geq0$ $\forall c\in \mathbb{R}^p$
 \end{itemize}
 \end{frame}
 
@@ -756,7 +756,7 @@ M_X y =\hat\alpha M_X e_j + res
 \end{align}
 
 \begin{itemize}
-\item $e_j'M_X y $ is the $j$ element of $M_Xy$ is the vector of residuals from the regression including all observations
+\item $e_j'M_X y $ is the $j$ element of $M_Xy$, the vector of residuals from the regression including all observations
 \item $e_j'M_xe_j$ is just a scalar, the diagonal element of $M_X$
 
 Then 
