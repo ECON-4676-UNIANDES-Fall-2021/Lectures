@@ -11,7 +11,7 @@
 - Lecture 4 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture4/Lecture4.pdf)\] \[[Recording](https://www.dropbox.com/sh/670e2d0jns7zset/AAA0tpMmNjwyb4P9QzdyqUKXa?dl=0)\]
 - TA Session 2 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta3_python/e-ta3_python.ipynb)\] \[[Recording](https://www.dropbox.com/sh/d7qmexeqh9rq5lk/AADxnnmjLVq96c3oKlC0raFLa?dl=0)\]
 - Lecture 5 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture05/Lecture5.pdf)\] \[[Recording](https://www.dropbox.com/sh/jue73u3cuwh3ymj/AABJfnoINW6URMMY71AGLSGYa?dl=0)\]
-- Lecture 6 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture06/Lecture6.pdf)\] 
-
+- Lecture 6 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture06/Lecture6.pdf)\] \[[Recording](https://www.dropbox.com/sh/ourgfg5zq18l50m/AABAEerziH_u6bR4nOKjSLhha?dl=0)\]
+- TA Session 3 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta4_webscraping_basics/e-ta4_webscraping_basics.ipynb)\] \[[Recording](https://www.dropbox.com/sh/ohvmda2moizf2pd/AAChOg3GiRWWIR81BhBjtTeya?dl=0)\]
 
 
