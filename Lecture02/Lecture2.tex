@@ -416,7 +416,7 @@ In a decision theoretic analysis, the quality of an estimator is quantified by i
 
 \begin{itemize}
   \footnotesize
-  \item Let $X_1,X_2,...X_n \sim Bernoulli(p)$
+  \item Let $X_1,X_2,...X_n \sim_{iid} Bernoulli(p)$
   \item Consider 2 estimators for $p$:  $\hat{p}^1=\frac{1}{n}\sum X_i$ and $\hat{p}^2=\frac{\sum X_i + \sqrt{n/4}}{n+\sqrt{n}}$
   \item Their risks are: $R(\hat{p}^1,p)=\frac{p(1-p)}{n}$ and $R(\hat{p}^2,p)=\frac{n}{4(n+\sqrt{n})^2}$
 \end{itemize}
