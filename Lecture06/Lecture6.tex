@@ -475,7 +475,7 @@ The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 The first step in maximizing $l(y|\beta,\sigma,X)$ is to {\bf concentrate} it with respect to $\sigma$
 
 \begin{align}
-\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}-\frac{1}{\sigma^3}(y-X\beta)'(y-X\beta)=0
+\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}+\frac{1}{\sigma^3}(y-X\beta)'(y-X\beta)=0
 \end{align}
 
 Solving for $\sigma^2$
@@ -539,7 +539,7 @@ k\\
 \frac{\partial l(\beta|y,X)}{\partial\beta}&=0 
 \end{align}
 \begin{align}
-\overset{n}{\underset{i=1}{\sum}}y_{i}\frac{1}{F(X_{i}\beta)}f(X_{i}'\beta)X_{i}'+\overset{n}{\underset{i=1}{\sum}}\left(1-y_{i}\right)\frac{1}{\left(1-F(x_{i}'\beta)\right)}-f(X_{i}'\beta)X_{i}'&=0
+\overset{n}{\underset{i=1}{\sum}}y_{i}\frac{1}{F(X_{i}\beta)}f(X_{i}'\beta)X_{i}'+\overset{n}{\underset{i=1}{\sum}}\left(1-y_{i}\right)\frac{1}{\left(1-F(X_{i}'\beta)\right)}-f(X_{i}'\beta)X_{i}'&=0
 \end{align}
 
 \begin{centering}
