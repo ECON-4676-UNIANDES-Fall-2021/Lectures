@@ -523,7 +523,7 @@ Good and bad news:
 Consider
 
 \begin{align}
-y_i= \beta x_i+u_i\,\,\,u_i \sim_{iid} N(0,\sigma^2I)
+y_i= \beta x_i+u_i\,\,\,u_i \sim_{iid} N(0,\sigma^2)
 \end{align}
 
 The likelihood function is
@@ -580,7 +580,7 @@ m=\frac{-1B}{2A} \,\,\,\,\,\, V=\frac{1}{A}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Bayesian Linear Regression (we are back)}
-
+\framesubtitle{$\sigma^2$ is known}
 
 \begin{align}
 P(\beta|y,X) \propto \left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n exp\left(\frac{-1}{2\sigma^2}\sum(y_i-\beta x_i)^2\right)exp\left(\frac{-1}{2\tau^2}(\beta-\beta_0)^2\right)
