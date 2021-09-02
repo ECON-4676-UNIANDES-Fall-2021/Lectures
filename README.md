@@ -14,4 +14,5 @@
 - Lecture 6 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture06/Lecture6.pdf)\] \[[Recording](https://www.dropbox.com/sh/ourgfg5zq18l50m/AABAEerziH_u6bR4nOKjSLhha?dl=0)\]
 - TA Session 3 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta4_webscraping_basics/e-ta4_webscraping_basics.ipynb)\] \[[Recording](https://www.dropbox.com/sh/ohvmda2moizf2pd/AAChOg3GiRWWIR81BhBjtTeya?dl=0)\]
 - Lecture 7 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture07/Lecture7.pdf)\] \[[Recording](https://www.dropbox.com/sh/u20v68dplmy8ckn/AACO2ZAmz6st52DNplzNcW2Ga?dl=0)\]
+- Lecture 8 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture08/Lecture8.pdf)\] \[[Recording]()\]
 
