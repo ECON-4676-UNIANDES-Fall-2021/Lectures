@@ -344,7 +344,7 @@ y_{i} = \beta x_{i} + u_{i}\ ,\ \ u_{i} \sim N(0, \sigma^{2}\ )
 \sqrt{N}\ \left( h\left( \widehat{\beta} \right) - h(\beta_{0} \right) \rightarrow_{d}\text{\ N\ }{\left( 0,\ V_{\text{asy}}\ \lbrack h'(\beta_{0} \right)\rbrack}^{2}]
 \end{align}
 
-\item As $N\  \rightarrow \ \infty$ where n is the number of observations.
+\item As $N\  \rightarrow \ \infty$ where N is the number of observations.
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------%
@@ -457,9 +457,9 @@ $$V_{\pi} = \text{Var}_{Y}^{\beta}\left( h\left( \beta \right) \right) = \ \int_
 
     \item Trade-off
     \begin{itemize}
-        \item Large N: high computational cost (time) but more accurate approximation
+        \item Large S: high computational cost (time) but more accurate approximation
 
-        \item Small N: low computation cost (time) but less accurate approximation
+        \item Small S: low computation cost (time) but less accurate approximation
     \end{itemize}
 \end{itemize}
 \end{frame}
@@ -504,7 +504,7 @@ $$V_{\pi} = \text{Var}_{Y}^{\beta}\left( h\left( \beta \right) \right) = \ \int_
 
 \item $\beta_{\text{true}} = - 1\ and\ \sigma^{2} = 1$
 
-\item $\beta_{0} = 0\ and\ i = 100$
+\item $\beta_{0} = 0\ and\ \tau = 100$
 \end{itemize}
 \end{itemize}
 
@@ -520,7 +520,7 @@ $$V_{\pi} = \text{Var}_{Y}^{\beta}\left( h\left( \beta \right) \right) = \ \int_
 \frametitle{Direct Sampling}  
 \framesubtitle{Example: Linear regression}
 \begin{itemize}
-\item Step 1: we generate N draws from the $N\left( m,V \right),\ \left\{ \beta^{i} \right\} 1,\ldots,S$
+\item Step 1: we generate S draws from the $N\left( m,V \right),\ \left\{ \beta^{i} \right\} 1,\ldots,S$
 \item $m = \  - 1.07$
 \item $V = \ 0.0510$
 \end{itemize}
@@ -590,11 +590,11 @@ E_{Y}^{\beta}\left\lbrack \left| \beta \right| \right\rbrack \approx \frac{1}{S}
 \item The 90\% equal-tail-probability interval is approximated by
 
 \begin{align}
-C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
+C_{Y} = \left\lbrack q_{l},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
 \end{align}
 
 
-\item Where $q_{1}$ and $q_{u}$ such that
+\item Where $q_{l}$ and $q_{u}$ such that
 
 \begin{align}
 5\% = \ \frac{1}{S}\ \sum_{i = 1}^{S}{1\{\left| \beta \right| < q_{u}\}}
@@ -608,7 +608,7 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
 \framesubtitle{Example: Linear regression}
 
 \begin{itemize}
-\item Numerical accuracy of $\frac{1}{N}\ \sum_{i = 1}^{N}{1\left| \beta^{i} \right|}$
+\item Numerical accuracy of $\frac{1}{S}\ \sum_{i = 1}^{S}{1\left| \beta^{i} \right|}$
 \medskip
 \item We know that if we generate enough number of $\beta^{i}$, we get an accurate approximation to the posterior moments
 \medskip
@@ -638,7 +638,7 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
   \includegraphics[scale=0.2]{figures/n10}
   \\
   \tiny 
-  $\text{SD\ }\frac{1}{N}\ \sum_{i = 1}^{N}{\ \left| \beta^{i} \right|} = 0.688$
+  $\text{SD\ }\frac{1}{S}\ \sum_{i = 1}^{S}{\ \left| \beta^{i} \right|} = 0.688$
 \end{figure}
 
 
@@ -666,7 +666,7 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
   \includegraphics[scale=0.2]{figures/n100}
   \\
   \tiny 
-  $$\text{SD\ }\frac{1}{N}\ \sum_{i = 1}^{N}{\ \left| \beta^{i} \right|} = 0.022$$
+  $$\text{SD\ }\frac{1}{S}\ \sum_{i = 1}^{S}{\ \left| \beta^{i} \right|} = 0.022$$
 \end{figure}  
 
 
@@ -694,7 +694,7 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
   \includegraphics[scale=0.2]{figures/n1000}
   \\
   \tiny 
-  $$\text{SD\ }\frac{1}{N}\ \sum_{i = 1}^{N}{\ \left| \beta^{i} \right|} = 0.0074$$
+  $$\text{SD\ }\frac{1}{S}\ \sum_{i = 1}^{S}{\ \left| \beta^{i} \right|} = 0.0074$$
 \end{figure}  
 
 
@@ -721,7 +721,7 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
   \includegraphics[scale=0.2]{figures/n10000}
   \\
   \tiny 
-  $$\text{SD\ }\frac{1}{N}\ \sum_{i = 1}^{N}{\ \left| \beta^{i} \right|} = 0.0023$$
+  $$\text{SD\ }\frac{1}{S}\ \sum_{i = 1}^{S}{\ \left| \beta^{i} \right|} = 0.0023$$
 \end{figure}  
 
 
@@ -760,12 +760,12 @@ C_{Y} = \left\lbrack q_{1},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
 
 \item You also can posterior moments of $h(\beta)$ by simple average:
 \begin{align}
-\int_{}^{}{\text{h\ }\left( \beta \right)p\left( \beta \middle| Y \right)d\beta}\  \approx \ \frac{1}{N}\ \sum_{i = 1}^{N}{h (\beta^{i})}
+\int_{}^{}{\text{h\ }\left( \beta \right)p\left( \beta \middle| Y \right)d\beta}\  \approx \ \frac{1}{S}\ \sum_{i = 1}^{S}{h (\beta^{i})}
 \end{align}
 \item  SLLN guarantees this Monte Carlo average to the right limit:
 
 \begin{align}
-\frac{1}{N} \sum_{i = 1}^{N}{h\left( \beta^{i} \right) \rightarrow_{\text{a.s}} \int_{}^{} h\left( \beta \right)\pi\left( \beta | Y \right)d\beta }
+\frac{1}{S} \sum_{i = 1}^{S}{h\left( \beta^{i} \right) \rightarrow_{\text{a.s}} \int_{}^{} h\left( \beta \right)\pi\left( \beta | Y \right)d\beta }
 \end{align}
 
 \item CLT tells you that the Monte Carlo average always has a numerical error:
