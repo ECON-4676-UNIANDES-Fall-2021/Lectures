@@ -732,12 +732,12 @@ draws increases.
 
 \item For draws from direct sampling:
 
-$$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{N}h\left( \beta^{i} \right)  - \int{h\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta} \right)  \rightarrow_{d}\ N\ (0,V_\pi)$$
+$$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{S}h\left( \beta^{i} \right)  - \int{h\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta} \right)  \rightarrow_{d}\ N\ (0,V_\pi)$$
 
 
 \item For draws from Gibbs sampling (after discarding first few draws):
 
-$$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{N}h\left( \beta^{i} \right)  - \int{h\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta} \right)  \rightarrow_{d}\ N\ (0,V_{G})$$
+$$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{S}h\left( \beta^{i} \right)  - \int{h\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta} \right)  \rightarrow_{d}\ N\ (0,V_{G})$$
 
 
 \item ${V_{\pi} < V}_{G}$
