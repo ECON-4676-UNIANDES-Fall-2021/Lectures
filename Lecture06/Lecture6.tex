@@ -275,13 +275,13 @@
 Let $X_1,\dots,X_n\sim_{iid}f(x|\theta)$, the likelihood function is defined by
 
 \begin{align}\label{eq:1}
-\mathcal{L}(\theta|x)=\Pi_{i=1}^n \mathcal{L}(\theta|x)=\Pi_{i=1}^n f(x_i|\theta)
+\mathcal{L}(\theta|x)=\Pi_{i=1}^n \mathcal{L_{i}}(\theta|x)=\Pi_{i=1}^n f(x_i|\theta)
 \end{align}
 
 A maximum likelihood estimator of the parameter $\theta$:
 
 \begin{align}
-\hat \theta^{MLE}=\underset{\theta \in \Theta}{argmax}\, \mathcal{L}(\theta|x)(\theta,x)
+\hat \theta^{MLE}=\underset{\theta \in \Theta}{argmax}\, \mathcal{L}(\theta|x)
 \end{align}
 
 
@@ -352,7 +352,7 @@ If the likelihood function is differentiable (in $\theta$) a possible candidate 
 Here
 
 \begin{align}
-\mathcal{L}(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
+l(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
 \end{align}
 
 
