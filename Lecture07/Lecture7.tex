@@ -599,17 +599,17 @@ m=\frac{-1B}{2A} \,\,\,\,\,\, V=\frac{1}{A}
 Using the previous detour
 
 \begin{align}
-A= \frac{1}{\sigma^2}\sum x_i^2 +\frac{1}{\tau^2}
+A= \frac{1}{\sigma^2}\sum x_i^2 -\frac{1}{\tau^2}
 \end{align}
 \medskip
 \begin{align}
-B= -2 \frac{1}{\sigma^2}\sum y_i x_i +\frac{1}{\tau^2} \beta_0
+B= -2 \left( \frac{1}{\sigma^2}\sum y_i x_i -\frac{1}{\tau^2} \beta_0 \right)
 \end{align}
 
 Then $\beta\sim N(m,V)$ with
 
 \begin{align}
-m=\frac{\frac{1}{\sigma^2}\sum y_i x_i +\frac{1}{\tau^2} \beta_0}{(\frac{1}{\sigma^2}\sum x_i^2 +\frac{1}{\tau^2})}
+m=\frac{\frac{1}{\sigma^2}\sum y_i x_i -\frac{1}{\tau^2} \beta_0}{(\frac{1}{\sigma^2}\sum x_i^2 -\frac{1}{\tau^2})}
 \end{align}
 
 \begin{align}
@@ -624,9 +624,8 @@ m=\frac{\frac{1}{\sigma^2}\sum y_i x_i +\frac{1}{\tau^2} \beta_0}{(\frac{1}{\sig
 \frametitle{Bayesian Linear Regression (we are back)}
 
 \begin{align}
-m=\left(\frac{\frac{\sum x_i^2}{\sigma^2}}{\frac{\sum x_i^2}{\sigma^2}+\frac{1}{\tau^2}}\right)\frac{\sum x_iy_i}{\sum x_i^2} + \left(\frac{\frac{1}{\tau^2}}{\frac{\sum x_i^2}{\sigma^2}+\frac{1}{\tau^2}}\right)\beta_0
+m=\left(\frac{\frac{\sum x_i^2}{\sigma^2}}{\frac{\sum x_i^2}{\sigma^2}-\frac{1}{\tau^2}}\right)\frac{\sum x_iy_i}{\sum x_i^2} + \left(\frac{-\frac{1}{\tau^2}}{\frac{\sum x_i^2}{\sigma^2}-\frac{1}{\tau^2}}\right)\beta_0
 \end{align}
-
 \medskip
 
 \begin{align}
