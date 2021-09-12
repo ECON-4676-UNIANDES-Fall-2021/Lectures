@@ -494,12 +494,12 @@ $$\sigma^{2}|Y,\ \beta\ \sim\ IG\ (\bar{a}\ \bar{b})$$
    \item $\left( \sigma^{2} \right)^{s}\ \sim\ p\ (\sigma^{2}|Y,\ \beta^{\left( s - 1 \right)})$
     \medskip
 
-    \item $\beta^{s}\ \sim\ p\ (\beta|Y, \sigma^{(s - 1)} )$
+    \item $\beta^{s}\ \sim\ p\ (\beta|Y, \sigma^{(s)} )$
     \medskip
-    \item Go to step 1 with $i = i + 1\ $if $i < S$. Otherwise, exit loop
+    \item Go to step 1 with $s = s + 1\ $if $s < S$. Otherwise, exit loop
     \end{enumerate}
     \medskip
-\item At the end of the algorithm, you get draws $\left\{ \beta^{(s)},\ \left( \sigma^{2} \right)^{s} \right\}_{s = 1,\ldots,S}$.
+\item At the end of the algorithm, you get draws $\left\{ \beta^{(s)},\  \left(\sigma^{2}\right)^{(s)} \right\}_{s = 1,\ldots,S}$.
 
 \end{itemize}
 
@@ -535,7 +535,7 @@ $$y_{i} = \beta x_{i} + u_{i},\ \ \ \ u_{i}\ \sim\ N(0,\ \sigma^{2})$$
 with
 \item N = 100
 
-\item $\beta_{\text{true}} = \  - 1$ and $\sigma^{2} = 1$
+\item $\beta_{\text{true}} = \  - 1$ and $\sigma_{\text{true}}^{2} = 1$
 
 \item Prior for $\beta:\beta_{0} = 0$ and $\tau = 1$
 
@@ -594,7 +594,7 @@ with
 
 \begin{align}
 \beta_{\text{true}} &= \  - 1 \\
-\sigma^{2} &= 1
+\sigma_{\text{true}}^{2} &= 1
 \end{align}
 
 \end{itemize}
@@ -773,7 +773,7 @@ $$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{N}h\left( \beta^{i} \right)  - \in
         \item $\vdots$
 
         \item Draw $\theta_{m}^{(s + 1)}$ from the density
-        $p\ (\theta_{m}|\theta_{1}^{\left( s \right)},\theta_{2}^{\left( s+1 \right)},\theta_{3}^{\left( s+1 \right)},\ldots,\ \theta_{m - 1}^{\left( s + 1 \right)},\ Y)\ $
+        $p\ (\theta_{m}|\theta_{1}^{\left( s +1 \right)},\theta_{2}^{\left( s+1 \right)},\theta_{3}^{\left( s+1 \right)},\ldots,\ \theta_{m - 1}^{\left( s + 1 \right)},\ Y)\ $
     \end{itemize}
 
 \end{itemize}
