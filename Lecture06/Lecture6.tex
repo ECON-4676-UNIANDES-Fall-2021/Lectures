@@ -173,7 +173,7 @@
     \medskip
     \item Github Repos
     \medskip
-    \item Bonus: Contribuir con los tutorials ya sea en  \texttt{Python}  o \texttt{R}:  0.25 bonus de la nota final (max 1 punto)
+    \item Bonus: Contribute to tutorials either in  \texttt{Python}  or \texttt{R}:  0.25 final grade bonus (max 1 point)
 
 \end{itemize}
 
@@ -352,7 +352,7 @@ If the likelihood function is differentiable (in $\theta$) a possible candidate 
 Here
 
 \begin{align}
-l(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
+\mathcal{L}(\theta |x)=\frac{1}{(\sqrt{2\pi})^{n}}e^{-\frac{1}{2}\sum_{i=1}^{n}(x_i-\mu)^2}
 \end{align}
 
 
@@ -381,7 +381,7 @@ FOC
 
 
 \begin{align}
-\sum_{i=1}^{n}\left(x_{i}-\hat{\mu}\right)=0
+\sum_{i=1}^{n}\left(x_{i}-\mu \right)=0
 \end{align}
 
 then
@@ -475,7 +475,7 @@ The ML estimators for $\beta$ and $\sigma$ result from maximizing this last line
 The first step in maximizing $l(y|\beta,\sigma,X)$ is to {\bf concentrate} it with respect to $\sigma$
 
 \begin{align}
-\frac{\partial l}{\partial \sigma}&=-\frac{n}{2\sigma}+\frac{1}{\sigma^3}(y-X\beta)'(y-X\beta)=0
+\frac{\partial l}{\partial \sigma}&=-\frac{n}{\sigma}+\frac{1}{\sigma^3}(y-X\beta)'(y-X\beta)=0
 \end{align}
 
 Solving for $\sigma^2$
@@ -529,12 +529,7 @@ l(\beta,Y)=\sum_{i=1}^n\left(y_i \ln F(X_i\beta)+(1-y_i)\ln(1-F(X_i\beta))\right
 \begin{frame}[fragile]
 \frametitle{Example 2}
 FOC
-\begin{align}
-\left(\begin{array}{c}
-k\\
-2
-\end{array}\right)=\frac{k(k-1)}{2}
-\end{align}
+
 \begin{align}
 \frac{\partial l(\beta|y,X)}{\partial\beta}&=0 
 \end{align}
