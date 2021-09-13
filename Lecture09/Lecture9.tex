@@ -413,9 +413,9 @@ $$\pi (\beta,\ {\sigma}^{2}\ \left| Y,X \right)$$
 \medskip
 $$\beta|Y,X,\ \sigma^{2}\ \sim\ N\ (m,V)$$
 \medskip
-\item We can show that that
+\item We can show that
 \medskip
-$$\sigma^{2}|Y,\beta\ \sim\ \text{IG}\ \left( a + \frac{N}{2},\ \ b + \frac{1}{2}\ \sum_{i = 1}^{N}\left( y_{i} - x_{i}\beta \right)^{2}\  \right)$$
+$$\sigma^{2}|Y,\beta\,X \sim\ \text{IG}\ \left( a + \frac{N}{2},\ \ b + \frac{1}{2}\ \sum_{i = 1}^{N}\left( y_{i} - x_{i}\beta \right)^{2}\  \right)$$
 \medskip
 
 \item That is, IG is conjugate prior for $\sigma^{2}$
@@ -499,7 +499,7 @@ $$\sigma^{2}|Y,\ \beta\ \sim\ IG\ (\bar{a}\ \bar{b})$$
     \item Go to step 1 with $i = i + 1\ $if $i < S$. Otherwise, exit loop
     \end{enumerate}
     \medskip
-\item At the end of the algorithm, you get draws $\left\{ \beta^{(s)},\ \left( \sigma^{2} \right)^{s} \right\}_{s = 1,\ldots,S}$.
+\item At the end of the algorithm, you get draws $\left\{ \beta^{(s)},\ \left( \sigma^{2} \right)^{(s)} \right\}_{s = 1,\ldots,S}$.
 
 \end{itemize}
 
@@ -773,7 +773,7 @@ $$\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{S}h\left( \beta^{i} \right)  - \in
         \item $\vdots$
 
         \item Draw $\theta_{m}^{(s + 1)}$ from the density
-        $p\ (\theta_{m}|\theta_{1}^{\left( s \right)},\theta_{2}^{\left( s+1 \right)},\theta_{3}^{\left( s+1 \right)},\ldots,\ \theta_{m - 1}^{\left( s + 1 \right)},\ Y)\ $
+        $p\ (\theta_{m}|\theta_{1}^{\left( s+1 \right)},\theta_{2}^{\left( s+1 \right)},\theta_{3}^{\left( s+1 \right)},\ldots,\ \theta_{m - 1}^{\left( s \right)},\ Y)\ $
     \end{itemize}
 
 \end{itemize}
