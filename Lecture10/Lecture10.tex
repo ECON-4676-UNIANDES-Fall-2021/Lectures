@@ -280,7 +280,7 @@ Sketch
 \begin{align}
 m(X) &=\int f(X|\theta)p(\theta)d\theta \\ \nonumber
  &\propto \int exp \left(\frac{-1}{2}(x-\theta)^2\right) exp \left( \frac{-\theta^2}{2\tau^2}\right) d\theta \\ \nonumber
- &\propto \int exp \left( \frac{-1}{2} \left( (x-\theta)^2 - \frac{\theta^2}{\tau^2}\right)\right) d\theta 
+ &\propto \int exp \left( \frac{-1}{2} \left( (x-\theta)^2 + \frac{\theta^2}{\tau^2}\right)\right) d\theta 
 \end{align}
 
 Let's focus here $(x-\theta)^{2}+\frac{\theta^{2}}{\tau^{2}} $
@@ -382,7 +382,7 @@ E(\theta|x)&=   \frac{(x+1) m(x+1)}{m(x)}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Robbins' Formula}
-The obvious estimate of the marginal density $f(x)$ is the proportion of total counts in category $x$,
+The obvious estimate of the marginal density $m(x)$ is the proportion of total counts in category $x$,
 \begin{align}
 \hat m(x)= \frac{y_x}{N}
 \end{align}
