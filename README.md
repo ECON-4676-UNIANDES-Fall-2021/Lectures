@@ -20,6 +20,6 @@
 - Lecture 10 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture10/Lecture10.pdf)\] \[[Recording](https://www.dropbox.com/sh/hyvj799lns8x9ol/AAA-AkUANIPe4u-c22dCIwXya?dl=0)\]
 - TA Session 5 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta6_Direct_sampling_and_Gibbs_sampler/e-ta6_Direct_sampling_and_Gibbs_sampler.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%205)\]
 - Lecture 11 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture11/Lecture11.pdf)\] \[[Recording](https://www.dropbox.com/sh/lktsx0n6locv2qr/AAD7PHTxYnqftyBxmLSO_YQfa?dl=0)\]
-- Lecture 12 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture12/Lecture12.pdf)\] \[[Recording]()\]
-
+- Lecture 12 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture12/Lecture12.pdf)\] \[[Recording](https://www.dropbox.com/sh/mwzrg2n68gg3qhi/AADygUnSySmFst9DPa_Y_A0ga?dl=0)\]
+- TA Session 6 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta6_Direct_sampling_and_Gibbs_sampler/e-ta6_Direct_sampling_and_Gibbs_sampler.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2Fcomplementaria%206)\]
 
