@@ -1,0 +1,1150 @@
+\documentclass[
+  shownotes,
+  xcolor={svgnames},
+  hyperref={colorlinks,citecolor=DarkBlue,linkcolor=DarkRed,urlcolor=DarkBlue}
+  , aspectratio=169]{beamer}
+\usepackage{animate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{mathpazo}
+%\usepackage{xcolor}
+\usepackage{multimedia}
+\usepackage{fancybox}
+\usepackage[para]{threeparttable}
+\usepackage{multirow}
+\setcounter{MaxMatrixCols}{30}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage[compatibility=false,font=small]{caption}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{chronosys}
+\usepackage{appendixnumberbeamer}
+\usepackage{animate}
+\setbeamertemplate{caption}[numbered]
+\usepackage{color}
+%\usepackage{times}
+\usepackage{tikz}
+\usepackage{comment} %to comment
+%% BibTeX settings
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{,}{a}{,}{,}
+\setbeamertemplate{bibliography item}{[\theenumiv]}
+
+% Defines columns for bespoke tables
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\usepackage{xfrac}
+
+
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+
+% Theme and colors
+\usetheme{Boadilla}
+
+% I use steel blue and a custom color palette. This defines it.
+\definecolor{andesred}{HTML}{af2433}
+
+% Other options
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\usefonttheme{serif}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[square]
+\setbeamertemplate{section in toc}[circle]
+
+\makeatletter
+
+\definecolor{mybackground}{HTML}{82CAFA}
+\definecolor{myforeground}{HTML}{0000A0}
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=black}
+
+\setbeamercolor{background canvas}{fg=myforeground, bg=white}
+\setbeamercolor{background}{fg=myforeground, bg=mybackground}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=white, bg=andesred}
+
+\setbeamercolor{frametitle}{fg=andesred}
+\setbeamercolor{title}{fg=andesred}
+\setbeamercolor{block title}{fg=andesred}
+\setbeamercolor{itemize item}{fg=andesred}
+\setbeamercolor{itemize subitem}{fg=andesred}
+\setbeamercolor{itemize subsubitem}{fg=andesred}
+\setbeamercolor{enumerate item}{fg=andesred}
+\setbeamercolor{item projected}{bg=gray!30!white,fg=andesred}
+\setbeamercolor{enumerate subitem}{fg=andesred}
+\setbeamercolor{section number projected}{bg=gray!30!white,fg=andesred}
+\setbeamercolor{section in toc}{fg=andesred}
+\setbeamercolor{caption name}{fg=andesred}
+\setbeamercolor{button}{bg=gray!30!white,fg=andesred}
+
+
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+
+\makeatother
+
+
+
+
+
+
+%%%%%%%%%%%%%%% BEGINS DOCUMENT %%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[Lecture 14]{Lecture 14: \\ Prediction, Complexity, \\ and the Bias-Variance Trade-off}
+\subtitle{Big Data and Machine Learning for Applied Economics \\ Econ 4676}
+\date{\today}
+
+\author[Sarmiento-Barbieri]{Ignacio Sarmiento-Barbieri}
+\institute[Uniandes]{Universidad de los Andes}
+
+
+\begin{frame}[noframenumbering]
+\maketitle
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Motivation              %
+% What is the question?
+% Why do we care?
+% What is new?
+% What do you find?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{frame}
+\frametitle{Agenda}
+
+\tableofcontents
+
+
+\end{frame}
+
+
+
+%%----------------------------------------------------------------------%
+\section{Recap}
+%----------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Recap}
+
+\begin{itemize} 
+    \item Model
+
+    \begin{align}
+    y = X \beta + u
+    \end{align}
+    
+    \item We went over different estimation methods
+    \begin{itemize} 
+      \item OLS (max. in sample fit), numerical properties: big n, update $\beta$.
+      \medskip
+      \item MM (match moments)
+      \medskip
+      \item MLE (find parameters that maximizes the likelihood of the sample)
+      \medskip
+      \begin{itemize}
+        \item $y = \rho Wy + X\beta + u$
+      \end{itemize}
+      \item Bayesian (updating priors)
+      \medskip
+      \begin{itemize}
+        \item How to incorporate information
+        \item Explicit about priors.
+      \end{itemize}
+    \end{itemize}    
+    \medskip
+    \item Now and for the rest of the semester we shift our attention to prediction (with some applications to inference)
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\section{Prediction and Linear Models}
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Prediction and Linear Models}
+
+\begin{itemize}
+  \item Suppose we have a linear model
+\end{itemize}
+\bigskip
+\begin{equation}\label{eq:3_1_7}
+y = \beta_1 +\beta_2 X_2 +\dots+\beta_k X_k +u
+\end{equation}
+
+\bigskip
+\begin{itemize}
+  \item With classical assumptions on $u$, $E(u)=0$ and $V(u) = \sigma^2$
+  \item In this context, estimating well means in predicting well 
+  \item The prediction for $Y$ is given by:
+\end{itemize}
+
+\begin{equation}\label{eq:3_1_8}
+\hat{y} = \hat{\beta}_1 + \hat{\beta}_2 X_2 + \dots + \hat{\beta}_k X_k
+\end{equation}
+
+\bigskip
+\begin{itemize}
+  \item where $\hat{\beta}_1,\dots,\hat{\beta}_k$ are estimates. 
+\end{itemize}
+
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Prediction and Linear Models}
+
+\begin{itemize}
+  \item How we evaluate the performance of out predictor?
+  \medskip
+  \item The \emph{prediction error} is defined as:
+
+
+  
+  \begin{align}
+    Err(\hat y) = E\left(L(y-\hat y)\right)
+  \end{align}
+
+  \item under a square loss $(\theta-a)^2$
+  \begin{align}
+    Err(\hat y) = E\left(y-\hat y\right)^2\
+  \end{align}
+
+\medskip
+  \item The prediction error is equal to the MSE
+  
+  
+  %\item Note that the $Err(\hat Y)$ involves two RV (compare it to $MSE(\hat \beta$) (involves a RV and a parameter))
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Prediction and Linear Models}
+
+\begin{itemize}
+\item Model $y = X\beta + u$
+\item Prediction is given by $\hat{y} = X\hat{\beta}$
+\item The prediction error:
+\begin{align}
+Err(\hat y) &= E\left(y-\hat y\right)^2 \\  
+        &= E\left(y- E(\hat y) + E(\hat y) - \hat y\right)^2  \\
+        &= E\left(X\beta + u- E(X\hat{\beta}) + E(X\hat{\beta}) - X\hat{\beta} \right)^2  \\\
+        \vdots \\
+        &= X' Bias^2\left(\hat \beta \right)X +  X'Var( \hat \beta)X  + \sigma^2
+\end{align}
+\item Three parts:
+\begin{itemize}
+  \item  Bias of our estimator (\emph{reducible})
+  \item  The variance of our estimator (\emph{reducible})
+  \item  The error from not being able to observe $u$. (\emph{irreducible})
+\end{itemize}
+
+\end{itemize}
+\medskip
+{\tiny This is a sketch, do the missing steps as HW}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Prediction and linear regression}
+
+\begin{itemize}
+  \item Under the classical assumptions the OLS estimator is unbiased, hence 
+\end{itemize}
+
+\begin{align}
+  E( X \hat \beta)&= E(\hat{\beta}_1 + \hat{\beta}_2 X_2 + \dots + \hat{\beta}_k X_k) \\ 
+  &= E(\hat{\beta}_1) + E(\hat{\beta}_2) X_2 + \dots + E(\hat{\beta}_k) X_k  \\ 
+  &= X \beta
+\end{align}
+
+
+Then, 
+
+\begin{itemize}
+  \item $Err(\hat y)$ reduces to  $V(\hat \beta)$
+\end{itemize} 
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Complexity and the variance/bias trade off}
+
+\begin{itemize}
+\item Classical econometrics, model choice involves deciding between a smaller and a larger linear model. 
+\item Consider the following competing models for $y$:
+
+\end{itemize}
+\bigskip
+\begin{equation}
+Y=\beta_1 X_1 + u_1
+\end{equation}
+
+and
+
+\begin{equation}
+Y=\beta_1 X_1 + \beta_2 X_2 + u_2
+\end{equation}
+
+\bigskip
+\begin{itemize}
+  \item $\hat \beta^{(1)}_1$ the OLS estimator of regressing $y$ on $X_1$
+  \item  $\hat \beta^{(2)}_1$ and $\hat \beta^{(2)}_2$ the OLS estimators of $\beta_1$ and $\beta_2$ of regressing $Y$ on $X_1$ and $X_2$. 
+\end{itemize}
+ 
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Complexity and the variance/bias trade off}
+
+The corresponding predictions will be
+
+\begin{equation}\label{eq:3_2_3}
+\hat{Y}^{(1)}=\hat{\beta}^{(1)}_1 X_1 
+\end{equation}
+
+and
+
+\begin{equation}\label{eq:3_2_4}
+\hat{Y}^{(2)}=\hat{\beta}^{(2)}_1 X_1 + \hat{\beta}^{(2)}_2 X_2 
+\end{equation}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Complexity and the variance/bias trade off}
+
+\begin{itemize}
+  \item An important discussion in classical econometrics is that of omission of relevant variables vs. inclusion of irrelevant ones. 
+  \medskip
+  \begin{itemize}
+    \item If model (1) is true then estimating the larger model (2) leads to inefficient though unbiased estimators due to unnecessarily including $X_2$. 
+    \medskip
+    \item If model (2) holds, estimating the smaller model (1) leads to a more efficient but biased estimate if $X_1$ is also correlated with the omitted regressor $X_2$. 
+  \end{itemize}
+  \medskip
+  \item This discussion of small vs large is always with respect to a model that is supposed to be true.
+  \medskip
+\item  But in practice the true model is unknown. 
+
+\end{itemize}
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Complexity and the variance/bias trade off}
+
+
+\begin{itemize}
+  \item Choosing between models involves a {\it bias/variance trade off}
+  \medskip
+\item Classical econometrics tends to solve this dilemma abruptly, 
+  \begin{itemize}
+    \item  requiring unbiased estimation, and hence favoring larger models to avoid bias
+  \end{itemize}
+\medskip
+\item In this simple setup, larger models are `more complex', hence more complex models are less biased but more inefficient. 
+\medskip
+\item Hence, in this very simple framework complexity is measured by the number of explanatory variables. 
+\medskip
+\item A central idea in machine learning is to generalize the idea of complexity, 
+  \begin{itemize}
+    \item Optimal level of complexity, that is, models whose bias and variance led to minimum MSE.
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+
+
+\begin{figure}[H] \centering
+  \centering
+  \includegraphics[scale=0.50]{figures/medium_bias_variance_trade_off.png}
+  \\
+  \tiny
+  Source: https://tinyurl.com/y4lvjxpc
+\end{figure}
+
+
+{\tiny A very interesting discussion in a recent Twitter thread by Daniela Witten: \url{https://twitter.com/daniela_witten/status/1292293102103748609?s=20}}
+\end{frame}
+
+
+%----------------------------------------------------------------------%
+
+\begin{frame}[fragile]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1a.pdf}
+ \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+\begin{itemize}
+
+  \item Suppose that the true model is $y=\sum x_0^{p^*}\beta_s +u$ with $E(u)=0$ and $V(u)=\sigma^2$
+  \medskip
+  \item and $p^*$ is finite but unknown
+  \medskip
+  \item  We fit polynomials with increasing degrees $p=1,2,....$
+  \medskip
+  \item What happens when we increase the degree of the polynomial?
+  \medskip
+
+
+\end{itemize}
+
+\end{frame}
+
+
+
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1b.pdf}
+ \end{figure}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1c.pdf}
+ \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1d.pdf}
+ \end{figure}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1e.pdf}
+ \end{figure}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1f.pdf}
+ \end{figure}
+
+\end{frame}
+
+
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Complexity and the variance/bias trade off}
+
+
+\begin{itemize}
+
+  \item Bias ?
+  \item Variance:
+
+
+  \begin{align}
+  \hat f(x_0) = \sum_{s=0}^p x_0^s\hat\beta_s = x_0'\hat\beta  
+  \end{align}
+
+ \item  where $x_0'=(1,x_0,,x_0^2,\dots,x_0^p)$
+
+  \begin{align}
+  V(\hat f(x_0) ) = V(x_0'\hat\beta) = x_0'\sigma^2(X'X)^{-1}x_0
+  \end{align}
+
+  \item Then 
+
+  \begin{align}
+\frac{1}{n}\sum_{i=1}^n\sigma^2 x_{i}'(X'X)^{-1}x_{i}= \sigma^2 \frac{p}{n}
+\end{align}
+
+
+\item After we "hit" $p^*$ increasing complexity does not reduce the bias, but variance increases monotonically for $\sigma^2$ and $n$ given
+ 
+\end{itemize}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Proof}
+
+\begin{itemize}
+
+
+\item The fitted model for a polynomial of degree $p$ for observation $i$ is :
+\medskip
+\begin{align}
+\hat y_i = x_i'\hat\beta  
+\end{align}
+with  $x_i'=(1,x_i,,x_i^2,\dots,x_i^p)$
+\medskip
+\item Then $V(y_i) = V(x_i'\hat\beta)= \sigma^2 x_i'(X'X)^{-1}x_i$. 
+\medskip
+
+
+\begin{align}
+Average\, V(x_i'\hat \beta)=\frac{1}{n}\sum_{i=1}^n \sigma^2 x_i'(X'X)^{-1}x_i
+\end{align}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Proof}
+
+\begin{small}
+\begin{Shaded}
+\begin{itemize}
+  \item Trace.
+  \begin{itemize}
+    \tiny
+  \item If $A_{m\times m}$ with typical element $a_{ij}$. The {\bf trace} of A, $tr(A)$ is the sum of the elements of its diagonal: $tr(A)\equiv \sum_{s=1}^m a_{ii}$
+  \item Properties
+  \begin{itemize}
+    \tiny
+    \item For any square matrices A, B, and C: $tr(A+B)=tr(A)+tr(B)$
+    \item Cyclic property: $tr(ABC)=tr(BCA)=tr(CAB)$
+    \item If $m=1$ tr(A)=A
+  \end{itemize}
+  \end{itemize}
+\end{itemize}
+\end{Shaded}
+\end{small}
+\begin{itemize}
+\item Let's use traces. 
+\medskip
+\item Note that $x_i'(X'X)^{-1}x_i$ is a scalar, using the third property of traces
+
+\begin{align}
+Average\,V(x_i'\hat \beta)=\frac{1}{n}\sum_{i=1}^n \sigma^2 tr(x_i'(X'X)^{-1}x_i)
+\end{align}
+\end{itemize}
+
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Proof}
+
+\begin{itemize}
+
+
+\item Using the cyclic property, 
+
+\begin{align}
+tr(x_i'(X'X)^{-1}x_i)=tr((X'X)^{-1}x_i'x_i)
+\end{align}
+\medskip
+\item and the first property of traces,
+
+\begin{align}
+\sum_{i=1}^n tr((X'X)^{-1}x_i'x_i) & = tr(\sum_{i=1}^n (X'X)^{-1}x_i'x_i) \\
+            &=tr ((X'X)^{-1}(X'X)) \\
+            &= p
+\end{align}
+
+\end{itemize}
+\end{frame}
+
+\section{Overfit, Train and Test Samples}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Overfit, Train and Test Samples}
+
+\begin{itemize}
+  \item A  goal of machine learning is \emph{out of sample} prediction
+  \bigskip
+  \item OLS estimator minimizes the sum of squared residuals and hence maximizes $R^2$ through maximizing the explained sum of squares. 
+  \bigskip
+  \item OLS is designed to optimize the predictive power of the model, for the data used for estimation. 
+  \bigskip
+  \item But in most predictive situations what really matters is the ability to predict new data.
+  
+  
+\end{itemize}
+
+
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Overfit, Train and Test Samples}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1g.pdf}
+ \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile, noframenumbering]
+\frametitle{Overfit, Train and Test Samples}
+
+
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fig_1h.pdf}
+ \end{figure}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Train and test samples}
+
+\begin{itemize}
+  \item A simple alternative would be to split the data into two groups
+  \begin{itemize}
+    \item  Training sample: to build/estimate/train the model
+    \medskip
+    \item  Test sample:  to evaluate its performance 
+  \end{itemize}
+
+\bigskip
+\item From a strictly classical perspective 
+\begin{itemize}
+  \item Makes sense if training data is iid from the population, even works if it is iid conditional on $X$
+  \medskip
+  \item Two problems with this idea:
+  \begin{itemize}
+    \item  The first one is that given an original data set, if part of it is left aside to test the model, less data is left for estimation (leading to less efficiency). 
+    \item A second problem is how to decide which data will be used to train the model and which one to test it. {\tiny (more on how cross validation helps later)}
+  \end{itemize}
+\end{itemize}
+
+
+ \end{itemize}
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Train and test samples}
+
+
+The \emph{estimated prediction error} is defined as
+
+\begin{align}
+\hat{Err}(\hat y) = \sum_{i \in Test\,Sample} \left(y_i - \hat y_i \right)^2
+\end{align}
+
+\begin{itemize}
+  \item $i \in Test\,Sample$ refers to all the observations in the test sample. 
+  \item $Test\,Sample \cup Training\,Sample = \,Full\,Sample$
+  \bigskip
+  \item Note that:
+  \begin{itemize}
+    \item No obvious way on how to partition this
+    \item In some cases is exogenously given. \texttt{Kaggle Competition, Netflix Challenge}
+    \item This idea is almost inexistent (or trivial) in classical econometrics
+  \end{itemize}  
+
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+\section{Example: Predicting House Prices in \texttt{R}}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+
+
+    \begin{minipage}[t]{0.48\linewidth}
+
+    \begin{itemize}
+      \footnotesize
+    \item  \texttt{matchdata}  in the
+\emph{McSpatial package} for \texttt{R}. 
+  \item  3,204 sales of SFH Far North Side of Chicago in 1995 and 2005. 
+  \item This data set includes 18 variables/features about the home, 
+  \begin{itemize}
+    \tiny
+    \item price sold
+    \item number of bathrooms, bedrooms, 
+    \item latitude and longitude,
+    \item etc. 
+  \end{itemize}
+  \item  in \texttt{R}:
+  \medskip
+  
+      \begin{Shaded}
+      
+        \footnotesize
+        \KeywordTok{require}\NormalTok{(mcspatial)}\CommentTok{\tiny \#loads the package}    \\
+
+          \KeywordTok{data}\NormalTok{(matchdata) }\CommentTok{\tiny \#loads the data}    \\
+
+          \NormalTok{?matchdata }\CommentTok{\tiny \# help/info about  the data}    \\
+      
+      \end{Shaded}
+       \end{itemize} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\linewidth}%
+    \bigskip
+        \begin{figure}[H] \centering
+            \captionsetup{justification=centering}  
+            \includegraphics[scale=0.35]{figures/chicago.pdf}
+    \end{figure}
+    \end{minipage}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+  \item Train and Test  samples
+  \item 30\% / 70\% split
+\end{itemize}
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{101010}\NormalTok{) }\CommentTok{\#sets a seed }
+\NormalTok{matchdata \textless{}{-}}\StringTok{ }\NormalTok{matchdata }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
+\StringTok{                      }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{price=}\KeywordTok{exp}\NormalTok{(lnprice), }
+                             \CommentTok{\#transforms log prices to standard prices}
+                             \DataTypeTok{holdout=} \KeywordTok{as.logical}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(matchdata) }
+                             \OperatorTok{\%in\%}\StringTok{ }\KeywordTok{sample}\NormalTok{(}
+                             \KeywordTok{nrow}\NormalTok{(matchdata), }\KeywordTok{nrow}\NormalTok{(matchdata)}\OperatorTok{*}\NormalTok{.}\DecValTok{7}\NormalTok{)) }
+                             \CommentTok{\#generates a logical indicator 
+                             to divide between train and test set}
+\NormalTok{                             ) }
+
+\NormalTok{test\textless{}{-}matchdata[matchdata}\OperatorTok{$}\NormalTok{holdout}\OperatorTok{==}\NormalTok{T,]}
+\NormalTok{train\textless{}{-}matchdata[matchdata}\OperatorTok{$}\NormalTok{holdout}\OperatorTok{==}\NormalTok{F,]}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+ \item Naive approach: model with no covariates, just a constant
+ \item $y = \beta_0 + u$
+\end{itemize}
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+
+\NormalTok{model1\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\DecValTok{1}\NormalTok{,}\DataTypeTok{data=}\NormalTok{train)}
+\KeywordTok{summary}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+
+## 
+## Call:
+## lm(formula = price ~ 1, data = train)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -258018 -127093  -24018   92732  598482 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   284018       4782   59.39   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 148300 on 961 degrees of freedom
+\end{verbatim}
+\end{tiny}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+In this case our prediction for the log price is the average train
+sample average
+
+\[
+\hat{y}=\hat{\beta_0}=\frac{\sum y_i}{n}=m
+\]
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\KeywordTok{coef}\NormalTok{(model1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## (Intercept) 
+##    284017.6
+\end{verbatim}
+\end{tiny}
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(train}\OperatorTok{$}\NormalTok{price)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## [1] 284017.6
+\end{verbatim}
+\end{tiny}
+
+\end{frame}
+%----------------------------------------------------------------------%
+
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+  \item But we are concerned on predicting well our of sample,:
+\end{itemize}
+\bigskip
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\NormalTok{test}\OperatorTok{$}\NormalTok{model1\textless{}{-}}\KeywordTok{predict}\NormalTok{(model1,}\DataTypeTok{newdata =}\NormalTok{ test)}
+\KeywordTok{with}\NormalTok{(test,}\KeywordTok{mean}\NormalTok{((price}\OperatorTok{{-}}\NormalTok{model1)}\OperatorTok{\^{}}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## [1] 21935777917
+\end{verbatim}
+\end{tiny}
+
+\begin{itemize}
+  \item $\hat Err(\hat y)=\frac{\sum((y-\hat{y})^2)}{n}=$ \ensuremath{2.1935778\times 10^{10}}
+  \item This is our starting point, Can we improve it?
+\end{itemize}
+  
+\end{frame}
+
+%----------------------------------------------------------------------%
+
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+ \item How to improve it?
+   \begin{itemize}
+   \item One way is using econ theory as guide
+   \item Hedonic house price function derived directly from the Rosen's theory of hedonic pricing
+   \item however, the theory says little on what are the relevant attributes of the house.
+   \item So we are going to explore the effects of adding house characteristics on our out $Err(\hat y)$
+  \end{itemize}
+  \item The simple inclusion of a single covariate can improve with respect to the \textit{naive} constant only model.
+\end{itemize}
+
+
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\NormalTok{model2\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\NormalTok{bedrooms,}\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model2\textless{}{-}}\KeywordTok{predict}\NormalTok{(model2,}\DataTypeTok{newdata =}\NormalTok{ test)}
+\KeywordTok{with}\NormalTok{(test,}\KeywordTok{mean}\NormalTok{((price}\OperatorTok{{-}}\NormalTok{model2)}\OperatorTok{\^{}}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## [1] 21695551442
+\end{verbatim}
+\end{tiny}
+\end{frame}
+
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+\item What about if we include more variables?
+\end{itemize}
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\NormalTok{model3\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\NormalTok{bedrooms}\OperatorTok{+}\NormalTok{bathrooms}\OperatorTok{+}\NormalTok{centair}\OperatorTok{+}\NormalTok{fireplace}\OperatorTok{+}\NormalTok{brick,}\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model3\textless{}{-}}\KeywordTok{predict}\NormalTok{(model3,}\DataTypeTok{newdata =}\NormalTok{ test)}
+\KeywordTok{with}\NormalTok{(test,}\KeywordTok{mean}\NormalTok{((price}\OperatorTok{{-}}\NormalTok{model3)}\OperatorTok{\^{}}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## [1] 21111169595
+\end{verbatim}
+\end{tiny}
+
+
+\begin{itemize}
+\item Note that the $Err$ is once more reduced. If we include all?
+\end{itemize}
+
+
+
+\begin{Shaded}
+\footnotesize
+\begin{Highlighting}[]
+\NormalTok{model4\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\NormalTok{bedrooms}\OperatorTok{+}\NormalTok{bathrooms}\OperatorTok{+}\NormalTok{centair}\OperatorTok{+}\NormalTok{fireplace}\OperatorTok{+}\NormalTok{brick}\OperatorTok{+}
+\StringTok{                }\NormalTok{lnland}\OperatorTok{+}\NormalTok{lnbldg}\OperatorTok{+}\NormalTok{rooms}\OperatorTok{+}\NormalTok{garage1}\OperatorTok{+}\NormalTok{garage2}\OperatorTok{+}\NormalTok{dcbd}\OperatorTok{+}\NormalTok{rr}\OperatorTok{+}
+\StringTok{                }\NormalTok{yrbuilt}\OperatorTok{+}\KeywordTok{factor}\NormalTok{(carea)}\OperatorTok{+}\NormalTok{latitude}\OperatorTok{+}\NormalTok{longitude,}\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model4\textless{}{-}}\KeywordTok{predict}\NormalTok{(model4,}\DataTypeTok{newdata =}\NormalTok{ test)}
+\KeywordTok{with}\NormalTok{(test,}\KeywordTok{mean}\NormalTok{((price}\OperatorTok{{-}}\NormalTok{model4)}\OperatorTok{\^{}}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tiny}
+\begin{verbatim}
+## [1] 20191829518
+\end{verbatim}
+\end{tiny}
+
+\begin{itemize}
+  \item Is there a limit to this improvement? Can we keep adding features and complexity?
+\end{itemize}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+\begin{itemize}
+  \item Is there a limit to this improvement? Can we keep adding features and complexity?
+  \item Let's try a bunch of models
+\end{itemize}
+
+\begin{Shaded}
+\scriptsize
+\begin{Highlighting}[]
+\NormalTok{model5\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\KeywordTok{poly}\NormalTok{(bedrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(bathrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}
+\StringTok{                }\NormalTok{centair}\OperatorTok{+}\NormalTok{fireplace}\OperatorTok{+}\NormalTok{brick}\OperatorTok{+}
+\StringTok{                }\NormalTok{lnland}\OperatorTok{+}\NormalTok{lnbldg}\OperatorTok{+}\NormalTok{rooms}\OperatorTok{+}
+\StringTok{                }\NormalTok{garage1}\OperatorTok{+}\NormalTok{garage2}\OperatorTok{+}\NormalTok{dcbd}\OperatorTok{+}\NormalTok{rr}\OperatorTok{+}
+\StringTok{                }\NormalTok{yrbuilt}\OperatorTok{+}\KeywordTok{factor}\NormalTok{(carea)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(latitude,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}
+\StringTok{                }\KeywordTok{poly}\NormalTok{(longitude,}\DecValTok{2}\NormalTok{),}\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model5\textless{}{-}}\KeywordTok{predict}\NormalTok{(model5,}\DataTypeTok{newdata =}\NormalTok{ test)}
+
+\NormalTok{model6\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\KeywordTok{poly}\NormalTok{(bedrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(bathrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\NormalTok{centair}\OperatorTok{+}\NormalTok{fireplace}\OperatorTok{+}\NormalTok{brick}\OperatorTok{+}
+\StringTok{                }\NormalTok{lnland}\OperatorTok{+}\NormalTok{lnbldg}\OperatorTok{+}\NormalTok{garage1}\OperatorTok{+}\NormalTok{garage2}\OperatorTok{+}\NormalTok{rr}\OperatorTok{+}
+\StringTok{                }\NormalTok{yrbuilt}\OperatorTok{+}\KeywordTok{factor}\NormalTok{(carea)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(latitude,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(longitude,}\DecValTok{2}\NormalTok{),}
+\StringTok{                }\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model6\textless{}{-}}\KeywordTok{predict}\NormalTok{(model6,}\DataTypeTok{newdata =}\NormalTok{ test)}
+
+\NormalTok{model7\textless{}{-}}\KeywordTok{lm}\NormalTok{(price}\OperatorTok{\textasciitilde{}}\KeywordTok{poly}\NormalTok{(bedrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(bathrooms,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\NormalTok{centair}\OperatorTok{+}\NormalTok{fireplace}\OperatorTok{+}\NormalTok{brick}\OperatorTok{+}
+\StringTok{                }\NormalTok{lnland}\OperatorTok{+}\NormalTok{lnbldg}\OperatorTok{+}\NormalTok{garage1}\OperatorTok{+}\NormalTok{garage2}\OperatorTok{+}\NormalTok{rr}\OperatorTok{+}
+\StringTok{                }\NormalTok{yrbuilt}\OperatorTok{+}\KeywordTok{factor}\NormalTok{(carea)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(latitude,}\DecValTok{3}\NormalTok{)}\OperatorTok{+}\KeywordTok{poly}\NormalTok{(longitude,}\DecValTok{3}\NormalTok{),}
+\StringTok{                }\DataTypeTok{data=}\NormalTok{train)}
+\NormalTok{test}\OperatorTok{$}\NormalTok{model7\textless{}{-}}\KeywordTok{predict}\NormalTok{(model7,}\DataTypeTok{newdata =}\NormalTok{ test)}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+   \begin{figure}[H] \centering
+            \captionsetup{justification=centering}  
+            \includegraphics[scale=.4]{figures/mse_plot_ch3-1.pdf}
+    \end{figure}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Example: Predicting House Prices in \texttt{R}}
+
+
+\begin{itemize}
+  \item Take away from the example
+  \bigskip
+  \item Linear models: choosing between smaller and larger models.
+  \bigskip
+  \item More complexity, the prediction error keeps getting smaller up to a point.
+  \bigskip
+  \item The choice of a model's complexity faces a bias/variance trade-off.  
+  \bigskip
+  \item Open question: how to find the optimal complexity level? \\ {\tiny (more on this in the coming weeks)}
+
+\end{itemize}
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\section{Review}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Review \& Next Steps}
+  
+  \begin{itemize} 
+    \item Prediction and Linear Models
+    \medskip
+    \item Complexity, Bias-Variance Trade off, Overfit.
+    \medskip
+    \item Train and Test Samples
+    \medskip
+    \item Example in \texttt{R}
+  \bigskip  
+
+  
+  \item  {\bf Next Week:} Resampling Methods and Model Selection
+  
+  
+  \end{itemize}
+
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+
+\section{Further Readings}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Further Readings}
+
+\begin{itemize}
+  \item Davidson, R., \& MacKinnon, J. G. (2004). Econometric theory and methods (Vol. 5). New York: Oxford University Press.
+  \bigskip
+  \item James, G., Witten, D., Hastie, T., \& Tibshirani, R. (2013). An introduction to statistical learning (Vol. 112, p. 18). New York: springer.
+  \bigskip
+  \item Friedman, J., Hastie, T., \& Tibshirani, R. (2001). The elements of statistical learning (Vol. 1, No. 10). New York: Springer series in statistics.
+  \bigskip
+  \item Murphy, K. P. (2012). Machine learning: a probabilistic perspective. MIT press.
+
+\end{itemize}
+
+\end{frame}
+
+
+%----------------------------------------------------------------------%
+\end{document}
+
+
