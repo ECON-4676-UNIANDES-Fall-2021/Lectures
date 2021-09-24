@@ -19,4 +19,13 @@
 - Lecture 9 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture09/Lecture9.pdf)\] \[[Recording](https://www.dropbox.com/sh/e1hwmekqxbikhu7/AAB150fKwLplOGkuJfN9GWDZa?dl=0)\]
 - Lecture 10 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture10/Lecture10.pdf)\] \[[Recording](https://www.dropbox.com/sh/hyvj799lns8x9ol/AAA-AkUANIPe4u-c22dCIwXya?dl=0)\]
 - TA Session 5 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta6_Direct_sampling_and_Gibbs_sampler/e-ta6_Direct_sampling_and_Gibbs_sampler.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%205)\]
-- Lecture 11 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture11/Lecture11.pdf)\] \[[Recording]()\]
+- Lecture 11 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture11/Lecture11.pdf)\] \[[Recording](https://www.dropbox.com/sh/lktsx0n6locv2qr/AAD7PHTxYnqftyBxmLSO_YQfa?dl=0)\]
+- Lecture 12 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture12/Lecture12.pdf)\] \[[Recording](https://www.dropbox.com/sh/mwzrg2n68gg3qhi/AADygUnSySmFst9DPa_Y_A0ga?dl=0)\]
+- TA Session 6 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta6_Direct_sampling_and_Gibbs_sampler/e-ta6_Direct_sampling_and_Gibbs_sampler.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2Fcomplementaria%206)\]
+- Lecture 13 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture13/Lecture13.pdf)\] \[[Recording](https://www.dropbox.com/sh/89r86u5hwrzr8ka/AACnmZFyrgMT1GjuMRgw63Bia?dl=0)\]
+- Lecture 14 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture14/Lecture14.pdf)\] \[[Recording](https://www.dropbox.com/sh/fsnpjqkptiajy6w/AADjATQMXNg7KcYvChUW3yWea?dl=0)\]
+
+
+
+
+
