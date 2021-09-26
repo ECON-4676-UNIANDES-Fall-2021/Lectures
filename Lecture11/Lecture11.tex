@@ -179,7 +179,7 @@
 
 
 \begin{itemize} 
-    \item {\bf Problem Set 2 is due next Thursday September 15 at 1:00pm} 
+    \item {\bf Problem Set 2 is due next Thursday September 16 at 1:00pm} 
     \medskip
     \item At some point before the class I'll send what points everyone should present. You should be prepared. Your grade will be impacted if you are not ready. 
     \medskip
@@ -595,7 +595,7 @@ $N(i)$ being the set of neighbors of location $j$. By convention, the diagonal e
     \medskip
     \item Queen criterion
     \medskip
-    \item Two observations are neighbors if they are within a certain distance, i.e., $j\in N(j)$ if $d_{ij} < d_{max}$ where $d$ is the distance between location $i$ and $j$. 
+    \item Two observations are neighbors if they are within a certain distance, i.e., $j\in N(i)$ if $d_{ij} < d_{max}$ where $d$ is the distance between location $i$ and $j$. 
     \medskip
     \item Closest neighbor, ties can be solved randomly
     \medskip
@@ -731,7 +731,7 @@ W=\left(\begin{array}{cccccccc}
 Quite often the $W$ matrices are standardized to sum to one in each row
 
 \begin{align}
-w^*_{ij}=\frac{w_{ij}}{\sum_{j=1}^n}w_{ij}
+w^*_{ij}=\frac{w_{ij}}{\sum_{j=1}^n w_{ij}}
 \end{align}
 
 This can be quite useful since $L(y) =W^{*} y$ in which each single element is equal to

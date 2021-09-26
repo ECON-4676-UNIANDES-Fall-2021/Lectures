@@ -201,7 +201,7 @@
       \item MLE (find parameters that maximizes the likelihood of the sample)
       \medskip
       \begin{itemize}
-        \item $y = \rho Wy + X\beta + u$
+        \item $y = \lambda Wy + X\beta + u$
       \end{itemize}
       \item Bayesian (updating priors)
       \medskip
@@ -234,7 +234,7 @@ y = \beta_1 +\beta_2 X_2 +\dots+\beta_k X_k +u
 \begin{itemize}
   \item With classical assumptions on $u$, $E(u)=0$ and $V(u) = \sigma^2$
   \item In this context, estimating well means in predicting well 
-  \item The prediction for $Y$ is given by:
+  \item The prediction for $y$ is given by:
 \end{itemize}
 
 \begin{equation}\label{eq:3_1_8}
@@ -281,7 +281,7 @@ y = \beta_1 +\beta_2 X_2 +\dots+\beta_k X_k +u
 \frametitle{Prediction and Linear Models}
 
 \begin{itemize}
-\item Model $y = X\beta + u$
+\item Model $y = X\beta + u$ ; $E(u)=0$ and $V(u) = \sigma^2$
 \item Prediction is given by $\hat{y} = X\hat{\beta}$
 \item The prediction error:
 \begin{align}
@@ -339,19 +339,19 @@ Then,
 \end{itemize}
 \bigskip
 \begin{equation}
-Y=\beta_1 X_1 + u_1
+y=\beta_1 X_1 + u_1
 \end{equation}
 
 and
 
 \begin{equation}
-Y=\beta_1 X_1 + \beta_2 X_2 + u_2
+y=\beta_1 X_1 + \beta_2 X_2 + u_2
 \end{equation}
 
 \bigskip
 \begin{itemize}
   \item $\hat \beta^{(1)}_1$ the OLS estimator of regressing $y$ on $X_1$
-  \item  $\hat \beta^{(2)}_1$ and $\hat \beta^{(2)}_2$ the OLS estimators of $\beta_1$ and $\beta_2$ of regressing $Y$ on $X_1$ and $X_2$. 
+  \item  $\hat \beta^{(2)}_1$ and $\hat \beta^{(2)}_2$ the OLS estimators of $\beta_1$ and $\beta_2$ of regressing $y$ on $X_1$ and $X_2$. 
 \end{itemize}
  
 \end{frame}
@@ -363,13 +363,13 @@ Y=\beta_1 X_1 + \beta_2 X_2 + u_2
 The corresponding predictions will be
 
 \begin{equation}\label{eq:3_2_3}
-\hat{Y}^{(1)}=\hat{\beta}^{(1)}_1 X_1 
+\hat{y}^{(1)}=\hat{\beta}^{(1)}_1 X_1 
 \end{equation}
 
 and
 
 \begin{equation}\label{eq:3_2_4}
-\hat{Y}^{(2)}=\hat{\beta}^{(2)}_1 X_1 + \hat{\beta}^{(2)}_2 X_2 
+\hat{y}^{(2)}=\hat{\beta}^{(2)}_1 X_1 + \hat{\beta}^{(2)}_2 X_2 
 \end{equation}
 
 \end{frame}
