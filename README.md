@@ -25,7 +25,7 @@
 - Lecture 13 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture13/Lecture13.pdf)\] \[[Recording](https://www.dropbox.com/sh/89r86u5hwrzr8ka/AACnmZFyrgMT1GjuMRgw63Bia?dl=0)\]
 - Lecture 14 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture14/Lecture14.pdf)\] \[[Recording](https://www.dropbox.com/sh/fsnpjqkptiajy6w/AADjATQMXNg7KcYvChUW3yWea?dl=0)\]
 - TA Session 7 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta8_Spatial_models/e-ta8_Spatial_models.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%207)\]
-- Lecture 15 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture15/Lecture15.pdf)\] \[[Recording]()\]
+- Lecture 15 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture15/Lecture15.pdf)\] \[[Recording](https://www.dropbox.com/sh/4xly4v0q0c8acyq/AAAF0V0pfHUBbBLZVMuRqXtia?dl=0)\]
 
 
 
