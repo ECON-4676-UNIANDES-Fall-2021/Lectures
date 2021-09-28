@@ -2,8 +2,11 @@
 
 *.lyx 
 Lecture09/example_gibbs.R
-Lecture15/*
 Lecture16/*
+Lecture17/*
+Lecture18/*
+Lecture19/*
+Lecture20/*
 
 ### macOS ###
 # General
