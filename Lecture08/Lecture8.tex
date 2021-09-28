@@ -398,11 +398,11 @@ E_{Y}^{\beta}\left\lbrack h\left( \beta \right) \right\rbrack &= \ \int_{}^{}{h\
 
 \item we can use the Strong Law of Large Numbers (SLLN) 
 
-$$\frac{1}{S} \sum_{i = 1}^{S} h(\beta^{i}) \rightarrow a.s. \int h\left( \beta \right)p\left( \beta \middle| Y \right) d\beta$$
+$$\frac{1}{S} \sum_{i = 1}^{S} h(\beta^{i}) \rightarrow a.s. \int h\left( \beta \right)\pi\left( \beta \middle| Y \right) d\beta$$
 
 \item and the Central Limit Theorem (CLT) 
 
-$$\sqrt{S} \left( \frac{1}{S}\ \sum_{i = 1}^{N}{h(\beta^{i}}) -  \int_{}^{}{h\left( \beta \right) \pi \left( \beta \middle| Y \right) d\beta} \right) \rightarrow_{d}\ N(0,V_{\pi})$$
+$$\sqrt{S} \left( \frac{1}{S}\ \sum_{i = 1}^{S}{h(\beta^{i}}) -  \int_{}^{}{h\left( \beta \right) \pi \left( \beta \middle| Y \right) d\beta} \right) \rightarrow_{d}\ N(0,V_{\pi})$$
 
 
 \item Where
@@ -423,7 +423,7 @@ $$V_{\pi} = \text{Var}_{Y}^{\beta}\left( h\left( \beta \right) \right) = \ \int_
 \item Note that we turned a complicated integration into a simple average
 \medskip
 \begin{align}
-\frac{1}{S}\ \sum_{i = 1}^{S}{h(\beta^{i}}) \rightarrow a.s.\ \int_{}^{}{h\left( \beta \right)p\left( \beta \middle| Y \right)d\beta}
+\frac{1}{S}\ \sum_{i = 1}^{S}{h(\beta^{i}}) \rightarrow a.s.\ \int_{}^{}{h\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta}
 \end{align}
 \medskip
 \item As the number of simulated draws increases, this simple average converges to the object of interest.
@@ -442,7 +442,7 @@ $$V_{\pi} = \text{Var}_{Y}^{\beta}\left( h\left( \beta \right) \right) = \ \int_
 \item Monte Carlo approximation:
 
 \begin{align}
-\sqrt{S}\left( \frac{1}{S}\ \sum_{i = 1}^{N}{h(\beta^{i}}) - \ \int_{}^{}{h\left( \beta \right)p\left( \beta \middle| Y \right)d\beta} \right) \rightarrow_{d}\ N(0,\ V_{\pi})
+\sqrt{S}\left( \frac{1}{S}\ \sum_{i = 1}^{S}{h(\beta^{i}}) - \ \int_{}^{}{h\left( \beta \right)p\left( \beta \middle| Y \right)d\beta} \right) \rightarrow_{d}\ N(0,\ V_{\pi})
 \end{align}
 
 
@@ -740,7 +740,7 @@ C_{Y} = \left\lbrack q_{l},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
 \item We try to mimic the distribution of Monte Carlo approximation offered by
 \medskip
 \begin{align}
-\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{N}{h\left( \beta^{i} \right) - \ \int_{}^{}{h\left( \beta \right)\pi\left( \beta \middle| Y \right) d\beta}} \right)\  \rightarrow_{d}\ N(0,V_{\pi})
+\sqrt{S}\ \left( \frac{1}{S}\ \sum_{i = 1}^{S}{h\left( \beta^{i} \right) - \ \int_{}^{}{h\left( \beta \right)\pi\left( \beta \middle| Y \right) d\beta}} \right)\  \rightarrow_{d}\ N(0,V_{\pi})
 \end{align}
 \medskip
 \item All variation in this Monte Carlo approximation is due to numerical "simulation".
@@ -760,7 +760,7 @@ C_{Y} = \left\lbrack q_{l},\ q_{u} \right\rbrack = \lbrack 0.719,\ 1.441\rbrack
 
 \item You also can posterior moments of $h(\beta)$ by simple average:
 \begin{align}
-\int_{}^{}{\text{h\ }\left( \beta \right)p\left( \beta \middle| Y \right)d\beta}\  \approx \ \frac{1}{S}\ \sum_{i = 1}^{S}{h (\beta^{i})}
+\int_{}^{}{\text{h\ }\left( \beta \right)\pi\left( \beta \middle| Y \right)d\beta}\  \approx \ \frac{1}{S}\ \sum_{i = 1}^{S}{h (\beta^{i})}
 \end{align}
 \item  SLLN guarantees this Monte Carlo average to the right limit:
 
