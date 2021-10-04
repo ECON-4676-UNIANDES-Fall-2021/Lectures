@@ -223,7 +223,7 @@
 \item Estimating test error: two approaches
 \medskip
 \begin{enumerate}
-\item We can directly estimate the test error, using either a validation set approach or a cross-validation approach
+\item We can directly estimate the test error, using either a validation set approach, or a cross-validation approach
 \medskip
 \item We can indirectly estimate test error by making an adjustment to the training error to account for overfitting.
 \medskip
@@ -423,7 +423,7 @@ l(\beta,\sigma^2) = -\frac{n}{2}log(2\pi)-\frac{n}{2}log(\sigma^2) -\frac{1}{2\s
 evaluating at $\hat \beta$, and $\hat{\sigma}^2=(y-X\hat\beta)'(y-X\hat\beta)$ we get the concentrated/profile log-likelihood
 
 \begin{align}
-l(\hat \beta,\hat \sigma^2) = -\frac{n}{2}log(2\pi)-\frac{n}{2}log(\hat \sigma^2) -\frac{n}{2}
+l(\sigma^2) = -\frac{n}{2}log(2\pi)-\frac{n}{2}log(\hat \sigma^2) -\frac{n}{2}
 \end{align}
 
 
@@ -499,7 +499,7 @@ T_n=2(l_j(\hat \theta_j)-l_i(\hat \theta_i)) \rightarrow \chi^2_{p_j-p_i}
 \section{Model Selection in Practice}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Model Selection in Practice}
+\frametitle{Model Selection in M.L Practice}
 
 \begin{itemize}
 \item We have $M_k$ models 
