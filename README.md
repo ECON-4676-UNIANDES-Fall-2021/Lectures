@@ -28,5 +28,7 @@
 - Lecture 15 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture15/Lecture15.pdf)\] \[[Recording](https://www.dropbox.com/sh/4xly4v0q0c8acyq/AAAF0V0pfHUBbBLZVMuRqXtia?dl=0)\]
 - Lecture 16 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture16/Lecture16.pdf)\] \[[Recording](https://www.dropbox.com/sh/gbcd85f5cow85eq/AADu6RW9Ihtott5soNnvzxuba?dl=0)\]
 - TA Session 8 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta8_Spatial_models/e-ta9_Cross_validation_and_overfit.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%208)\]
+- Lecture 17 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture17/Lecture17.pdf)\] \[[Recording](https://www.dropbox.com/sh/vbbymurdj9iby00/AAD3wcQFPW0AZWi1HsXiZ_l1a?dl=0)\]
+- Lecture 18 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture18/Lecture18.pdf)\] \[[Recording](https://www.dropbox.com/sh/sw9r1ygoe8fuvh3/AAAg-8BE8YaynU5NETZInKlja?dl=0)\]
 
 
