@@ -508,13 +508,13 @@ min_{\beta} R(\beta) = \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda \sum_{s=2}^p (\b
 Simple case 1 predictor
 
 \begin{align}
-min_{\beta} R(\beta) = \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda  (\beta_s)^2
+min_{\beta} R(\beta) = \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda  (\beta)^2
 \end{align}
 
 FOC
 
 \begin{align}
--2 \sum_{i=1}^n  y_i x_i + 2\beta + 2 \lambda  \beta_s =0
+-2 \sum_{i=1}^n  y_i x_i + 2\beta + 2 \lambda  \beta =0
 \end{align}
 
 \begin{align}
@@ -649,12 +649,12 @@ min_{\beta} R(\beta) = \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda \sum_{s=2}^p |\b
 \begin{itemize}
   \item Rank? Max number of rows or columns that are linearly independent
   \begin{itemize}
-  \item Implies $rank(X_{k\times n}) \leq min(k,n)$
+  \item Implies $rank(X_{n\times k}) \leq min(k,n)$
   \end{itemize}
   \bigskip
-  \item MCO we need $rank(X_{k\times n})=k \implies k\leq n$
+  \item MCO we need $rank(X_{n\times k})=k \implies k\leq n$
   \bigskip
-  \item If $rank(X_{k\times n})=k$ then $rank(X'X)=k$
+  \item If $rank(X_{n\times k})=k$ then $rank(X'X)=k$
   \bigskip
   \item If $k>n$, then  $rank(X'X)\leq n < k$ then $(X'X)$ cannot be inverted
   \bigskip
