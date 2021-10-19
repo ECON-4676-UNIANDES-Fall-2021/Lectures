@@ -616,7 +616,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
     \end{align}
     \item Next $f(X|y=j)$ with $j=0,1$. 
     \begin{itemize}
-    \item if we assume one predictor and $X|y\sim N(\mu_j,\sigma_j)$
+    \item if we assume one predictor and $X|y\sim N(\mu_j,\sigma_j^2)$
     \item the problem boils down to estimating $\mu_j,\sigma_j$
     \item LDA makes it simpler, assumes $\sigma_j=\sigma$ $\forall j$
     \item then partition the sample in two $y=0$ and $y=1$, estimate the moments and get $\hat{f}(X|y=j)$
@@ -679,7 +679,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \end{align}
   \item Then under the equal variance assumption
   \begin{align}
-  \frac{p (y=1|X)}{1-p (y=1|X} &= \frac{f(X|y=1)p(y=1)}{f(X|y=0)(1-p(y=1))} \\
+  \frac{p (y=1|X)}{1-p (y=1|X)} &= \frac{f(X|y=1)p(y=1)}{f(X|y=0)(1-p(y=1))} \\
                                 &= \frac{p(y=1)exp((x-\mu_1)^2)}{(1-p(y=1))exp((x-\mu_0)^2)} 
   \end{align}
 \end{itemize}
@@ -742,7 +742,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \medskip
   \begin{itemize}
     \item $\hat y_i =0$ if $p_i < p$
-    \item $\hat y_i = 1$ if $p_i < p$
+    \item $\hat y_i = 1$ if $p_i > p$
   \end{itemize}
   \medskip
 
