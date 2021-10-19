@@ -199,17 +199,13 @@ min_{\beta} NEL(\beta) &= \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda_1 \sum_{s=2}^
 \end{align}
 
 \begin{itemize}
-\item Elastic Net: reescaled version
-\item Double Shrinkage introduces ``too'' much bias, {\it final} version ``corrects'' for this
+\item Elastic Net: reescaled version. Double Shrinkage introduces ``too'' much bias, {\it final} version ``corrects'' for this
 \end{itemize}
 \bigskip
 \begin{align}
 \hat{\beta}_{EN}= \frac{1}{\sqrt{1+\lambda_2}}\hat{\beta}_{naive\,EN}
 \end{align}
-\bigskip
-\begin{itemize}
-  \item Careful sometimes software asks.
-\end{itemize}
+
 
 
 
@@ -643,7 +639,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
     \medskip
     \item then $X|y\sim NM(\mu,\Sigma)$
     \begin{align}
-    f(X|Y=j) = \frac{1}{(2\pi)^{k/2}|\Sigma|^{1/2}}exp(-\frac{1}{2}(x-\mu_j)'\Sigma_j(x-\mu_j)
+    f(X|y=j) = \frac{1}{(2\pi)^{k/2}|\Sigma|^{1/2}}exp(-\frac{1}{2}(x-\mu_j)'\Sigma_j(x-\mu_j)
     \end{align}
     \item $\mu_j$ is the vector of the sample means in each partition $j=0,1$
     \medskip
@@ -679,12 +675,12 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \item LDA?
   \item One predictor with $\sigma_0 = \sigma_1$ (equal variance)
   \begin{align}
-  p (Y=1|X)=\frac{f(X|Y=1)p(Y=1)}{f(X|Y=1)p(Y=1) + f(X|Y=0)(1-p(Y=1))}
+  p (y=1|X)=\frac{f(X|y=1)p(y=1)}{f(X|y=1)p(y=1) + f(X|y=0)(1-p(y=1))}
   \end{align}
   \item Then under the equal variance assumption
   \begin{align}
-  \frac{p (Y=1|X)}{1-p (Y=1|X} &= \frac{f(X|Y=1)p(Y=1)}{f(X|Y=0)(1-p(Y=1))} \\
-                                &= \frac{p(Y=1)exp((x-\mu_1)^2)}{(1-p(Y=1))exp((x-\mu_0)^2)} 
+  \frac{p (y=1|X)}{1-p (y=1|X} &= \frac{f(X|y=1)p(y=1)}{f(X|y=0)(1-p(y=1))} \\
+                                &= \frac{p(y=1)exp((x-\mu_1)^2)}{(1-p(y=1))exp((x-\mu_0)^2)} 
   \end{align}
 \end{itemize}
 
@@ -696,8 +692,8 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \item Taking logs
 
 \begin{align}
-  log \left( \frac{p (Y=1|X)}{1-p (Y=1|X}\right)  &= log(\frac{p(Y=1)}{(1-p(Y=1))}+(x-\mu_1)^2-(x-\mu_0)^2 \\
-  &= log(\frac{p(Y=1)}{(1-p(Y=1))}+\mu^2_1-\mu^2_0-2(\mu_1-\mu_0)x \\
+  log \left( \frac{p (y=1|X)}{1-p (y=1|X}\right)  &= log(\frac{p(y=1)}{(1-p(y=1))}+(x-\mu_1)^2-(x-\mu_0)^2 \\
+  &= log(\frac{p(y=1)}{(1-p(y=1))}+\mu^2_1-\mu^2_0-2(\mu_1-\mu_0)x \\
   &= \gamma_1 +\gamma_2 X
   \end{align}  
   \item under the assumption of equal variance the discrimination function is lineal
@@ -791,15 +787,15 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
 \end{itemize}
   \item Some definitions
   \begin{itemize}
-    \item $P=\sum Y_i$ positives
+    \item $P=\sum y_i$ positives
     \medskip
-    \item $N=\sum(1-Y_i)$ negatives
+    \item $N=\sum(1-y_i)$ negatives
     \medskip
     \item $T=P+N$ all observations
     \medskip
-    \item True Positives: $TP=\sum \hat{Y}_i Y_i$, True Positive Rate = $\frac{TP}{P}$
+    \item True Positives: $TP=\sum \hat{y}_i y_i$, True Positive Rate = $\frac{TP}{P}$
     \medskip
-    \item False Positives: $FP=\sum \hat{Y}_i (1-Y_i)$, False Positive Rate = $\frac{FP}{N}$
+    \item False Positives: $FP=\sum \hat{y}_i (1-y_i)$, False Positive Rate = $\frac{FP}{N}$
 
   \end{itemize}
 \end{itemize}
@@ -813,7 +809,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
 \begin{columns}[T] % align columns
 \begin{column}{.52\textwidth}
   \begin{itemize}
-    \item Binary Classifier: $\hat{Y}_i=1[p_i>c]$, $c\in[0,1]$
+    \item Binary Classifier: $\hat{y}_i=1[p_i>c]$, $c\in[0,1]$
     \medskip
     \item Bayes fixes $c=0.5$
     \medskip
@@ -845,15 +841,15 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \begin{itemize}
     \item In $(0,0)$, $c=1$. When $c\downarrow$, $TP \uparrow$ and $FP\uparrow$. Then
     \begin{align}
-    TPR = \sum \frac{\hat{Y}_iY_i}{P} \,\,\,\, FPR = \sum \frac{\hat{Y}_i(1-Y_i)}{T-P}
+    TPR = \sum \frac{\hat{y}_iy_i}{P} \,\,\,\, FPR = \sum \frac{\hat{y}_i(1-y_i)}{T-P}
     \end{align}
     \item Is easy to show
     \begin{align}
-    TPR &= \frac{\sum \hat{Y}_i}{P} - \frac{T-P}{P}FPR
+    TPR &= \frac{\sum \hat{y}_i}{P} - \frac{T-P}{P}FPR
     \end{align}
     \item ROC is the locus of all possible $TPR$ and $FPR$ for all possible $c\in[0,1]$ 
     \begin{align}
-    TPR &= \frac{\sum \hat{Y}_i(c)}{P} - \frac{T-P}{P}FPR(c)
+    TPR &= \frac{\sum \hat{y}_i(c)}{P} - \frac{T-P}{P}FPR(c)
     \end{align}
   \end{itemize}
 \end{itemize}  
@@ -1209,7 +1205,7 @@ Refractive index and chemical composition for six possible glass types: float gl
 \frametitle{LDA: Demo}
 \begin{scriptsize}
 \begin{align}
-    p(Y=1) = \frac{\sum_{i=1}^n 1[Y_i=1]}{N}
+    p(y=1) = \frac{\sum_{i=1}^n 1[y_i=1]}{N}
   \end{align}
 
 
