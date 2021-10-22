@@ -31,5 +31,6 @@
 - Lecture 17 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture17/Lecture17.pdf)\] \[[Recording](https://www.dropbox.com/sh/vbbymurdj9iby00/AAD3wcQFPW0AZWi1HsXiZ_l1a?dl=0)\]
 - Lecture 18 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture18/Lecture18.pdf)\] \[[Recording](https://www.dropbox.com/sh/sw9r1ygoe8fuvh3/AAAg-8BE8YaynU5NETZInKlja?dl=0)\]
 - TA Session 9 \[[Presentations]()\] \[[Recording](https://www.dropbox.com/sh/sjxjypinqzdqmsa/AAAOn0c-8guV4c5iah8Q_lo8a?dl=0)
-- Lecture 19 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture19/Lecture19.pdf)\] \[[Recording]()\]
+- Lecture 19 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture19/Lecture19.pdf)\] \[[Recording](https://www.dropbox.com/sh/lrrozw9e1zba822/AABEjONRhFR--XYfv2AEUMrCa?dl=0)\]
+- Lecture 20 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture20/Lecture20.pdf)\] \[[Recording](https://www.dropbox.com/sh/gwf31hh6ym30dya/AAD-oIy3hp5qOkk9ArjQYj8Ka?dl=0)\]
 
