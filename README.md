@@ -33,4 +33,4 @@
 - TA Session 9 \[[Presentations]()\] \[[Recording](https://www.dropbox.com/sh/sjxjypinqzdqmsa/AAAOn0c-8guV4c5iah8Q_lo8a?dl=0)
 - Lecture 19 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture19/Lecture19.pdf)\] \[[Recording](https://www.dropbox.com/sh/lrrozw9e1zba822/AABEjONRhFR--XYfv2AEUMrCa?dl=0)\]
 - Lecture 20 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture20/Lecture20.pdf)\] \[[Recording](https://www.dropbox.com/sh/gwf31hh6ym30dya/AAD-oIy3hp5qOkk9ArjQYj8Ka?dl=0)\]
-
+- TA Session 9 \[[Notebook]()\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%208)
