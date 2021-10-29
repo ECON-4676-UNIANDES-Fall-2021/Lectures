@@ -36,6 +36,6 @@
 - TA Session 10 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta10_Classification/Classification.ipynb)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%2010)\]
 - Lecture 21 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture21/Lecture21.pdf)\] \[[Recording](https://www.dropbox.com/sh/qn2z39v1stjac87/AAB0O07J-P3bgKQ2ZAVlBIoWa?dl=0)\]
 - Lecture 22 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture22/Lecture22.pdf)\] \[[Recording](https://www.dropbox.com/sh/rim9k9csiq7dq0k/AAAUu9MRj0NqT-mC7fF9n_qka?dl=0)\]
-
+- TA Session 11 \[[Notebook](https://github.com/ECON-4676-UNIANDES-Fall-2021/e-TA/blob/main/e-ta11_trees_and_random_forest)\] \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%2011)\]
 
 
