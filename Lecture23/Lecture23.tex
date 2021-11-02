@@ -517,7 +517,7 @@ obj^m &= \sum_{i=1}^N \left[ g_{im} \phi_m(x_i) \right]
 \item Instead, we use an additive strategy: fix what we have learned, and add one new tree at a time. We write the prediction value at step m as $\hat{y}_i^{m}$. 
 \begin{align}
 \hat{y}_i^{0} &=0 \\ \nonumber
-\hat{y}_i^{1} &= \hat{y}_i^{1} + f_1(x_i) \\ \nonumber
+\hat{y}_i^{1} &= \hat{y}_i^{0} + f_1(x_i) \\ \nonumber
 \dots \\ \nonumber
 \hat{y}_i^{M} &= \sum_{m=1}^M f_m(x_i) = \hat{y}_i^{m-1} + f_m(x_i) \\ \nonumber
 \end{align}
