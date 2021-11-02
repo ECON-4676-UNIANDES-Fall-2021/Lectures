@@ -407,11 +407,11 @@ f^\star=\underset{f\in\mathcal{F}}{\text{argmin}}\left\lbrace \sum_{i=1}^n L(y_i
 \begin{itemize}
 
 
-\item Again, the optimum is not some some real value $x^\star$, but some function $m^\star$. 
+\item Again, the optimum is not some some real value $x^\star$, but some function $f^\star$. 
 \item Thus, here we will have something like
 
 \begin{align}
-f^{m}=f^{m-1}+\underset{h\in H}{argmin}\sum_{i=1}^n(y_i,f^{m-1}(x_i)+h(x_i))
+f^{m}=f^{m-1}+\underset{h\in H}{argmin}\sum_{i=1}^nL(y_i,f^{m-1}(x_i)+ \phi(x_i))
 \end{align}
 
 \item If we consider using mean squared error (MSE) as our loss function, the objective becomes
