@@ -313,29 +313,6 @@
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Text as Data: Motivation}
-\framesubtitle{Gentzkow and Shapiro: What drives media slant?  Evidence from U.S. daily newspapers ({\it Econometrica}, 2010)}
-
-\begin{itemize}
-\item Build an economic model for newspaper demand that incorporates political partisanship (\rd Republican \bk vs \bl Democrat\bk)
-
-\medskip
- 
-\begin{itemize}
-\item What would be independent profit-maximizing ``slant''?
-\medskip
-\item Compare this to slant estimated from newspaper text.
-\end{itemize}
-\medskip
-
-\item Use data from Congress to isolate the phrases
-\medskip
-\item Compare phrase frequencies in the newspaper with phrase frequencies in the 2005 Congressional Record to identify whether the newspaper’s language is more similar to that of a congressional Republican or a congressional Democrat
-
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Text as Data: Motivation}
 
 \begin{itemize} 
   \item Jerry Moran, R-KS, says ``death tax'' relatively often and his district (Kansas 1st) voted 73\% for George W. Bush in 2004.
@@ -429,9 +406,7 @@ ideology \approx g(Y_{Bush})
 \begin{frame}[fragile]
 \frametitle{Turn Text into Data: Tokenization}
 \begin{itemize}
-\item This is the {\nv Bag-of-Words} representation of text.
-\medskip
-\item It treats documents as if they were constructed by randomly drawing words with-replacement from a bucket containing the fixed vocabulary. 
+\item The {\nv Bag-of-Words} representation of text treats documents as if they were constructed by randomly drawing words with-replacement from a bucket containing the fixed vocabulary. 
 \medskip
 \item By summarizing a document in terms of word counts, we are throwing away all information relevant to any more complex processes of document construction. 
 \medskip
@@ -609,13 +584,14 @@ ideology \approx g(Y_{Bush})
 
 \begin{itemize}
 \item Once you have text in a numeric format, it will give us a powerful framework for text analysis.
-\item When we combine with all the tools we learned so far
+\medskip
+\item We can combine this framework with all the tools we learned so far
 
 
 
 \medskip
 \begin{align}
-y= f(word\,counts) + u
+y= f(DTM) + u
 \end{align}
  
 \item where you can use ols, lasso, etc.
@@ -772,7 +748,7 @@ y= f(word\,counts) + u
 
 \item One way to think about almost everything we do is as dimension reduction.
 \medskip
- \item We are trying to learn from high-dimensional x some low-dimensional summaries that contain the information necessary to make good decisions. 
+ \item We are trying to learn from high-dimensional $X$ some low-dimensional summaries that contain the information necessary to make good decisions. 
  \medskip
  \item Dimension reduction can be supervised or unsupervised.
   \medskip
@@ -815,8 +791,8 @@ y= f(word\,counts) + u
 \medskip
 \pause
 \item Given a matrix of high-dimensional data $X_{n\times p}$, you’d like to reduce this to a function of a few “important” factors. 
-
-\item We do this by building a linear model for x as a function of these unknown factors and then estimating both factors and model at the same time.
+\medskip
+\item We do this by building a linear model for $X$ as a function of these unknown factors and then estimating both factors and model at the same time.
 
 
 \end{itemize}
@@ -857,13 +833,19 @@ x_{ij}=  \phi_{i1} f_{j1} + \dots + \phi_{ik} f_{jk} \,\, j=1,\dots,p
 \medskip
 \item You need to regress $X$ onto $f$, 
 \medskip
-\item which would be easy except that the $f$ are latent: you don’t know them and they need to be estimated. 
+\pause
+\item Which would be easy except that the $f$ are latent: you don’t know them and they need to be estimated. 
 \medskip
 \item It turns out that there are a number of fast ways to estimate the model
 \medskip
 \item One procedure is called principal component analysis (PCA). 
 \medskip
-\item The result of PCA is a set of rotations $\phi=(\phi_1,\dots,\phi_k)$. These can be used to obtain the factor scores $f_i$ for any observed $x_i$.
+\begin{itemize}
+  \item The result of PCA is a set of rotations $\phi=(\phi_1,\dots,\phi_k)$. 
+    \medskip
+  \item These can be used to obtain the factors $f_i$ for any observed $x_i$.
+\end{itemize}
+
 
 \end{itemize}
 
@@ -876,16 +858,19 @@ x_{ij}=  \phi_{i1} f_{j1} + \dots + \phi_{ik} f_{jk} \,\, j=1,\dots,p
 \begin{itemize}
 
 
-\item We have 6166 reviews, with an average length of 90 words per review, \url{we8there.com}. 
+\item We have 6,166 reviews, with an average length of 90 words per review, \url{we8there.com}. 
 \medskip
 \item A useful feature of these reviews is that they contain both text and a multidimensional rating on overall experience, atmosphere, food, service, and value. 
 \medskip
 \item For example, one user submitted a glowing review for Waffle House \#1258 in Bossier City, Louisiana: 
 \medskip
-{\tt \it 
+
+\begin{quote}
 I normally would not revue a Waffle House but this one deserves it. The workers, Amanda, Amy, Cherry, James and J.D. were the most pleasant crew I have seen. While it was only lunch, B.L.T. and chili, it was great. The best thing was the 50’ s rock and roll music, not to loud not to soft. This is a rare exception to what you all think a Waffle House is. Keep up the good work. \\
-Overall: 5, Atmosphere: 5, Food: 5, Service: 5, Value: 5. 
-}
+Overall: 5, Atmosphere: 5, Food: 5, Service: 5, Value: 5.  
+ \end{quote} 
+
+
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------%
