@@ -330,20 +330,20 @@ Overall: 5, Atmosphere: 5, Food: 5, Service: 5, Value: 5.
 \item A factor model looks like 
 
 \begin{align}
-X_{1}&=  \phi_{11} f_{1} + \dots + \phi_{1k} f_{k} \\ \nonumber
-X_{2}&=  \phi_{21} f_{1} + \dots + \phi_{2k} f_{k} \\ \nonumber
+x_{1}&=  \phi_{11} f_{1} + \dots + \phi_{1k} f_{k} \\ \nonumber
+x_{2}&=  \phi_{21} f_{1} + \dots + \phi_{2k} f_{k} \\ \nonumber
 &\vdots  \\ \nonumber
-X_{p} &=  \phi_{p1} f_{1} + \dots + \phi_{pk} f_{k} \\ \nonumber
+x_{p} &=  \phi_{p1} f_{1} + \dots + \phi_{pk} f_{k} \\ \nonumber
 \end{align}
 
 \item where 
   \begin{itemize}
     \footnotesize
-   \item $X_{j}$ are the inputs of the regressions (independent vars)
+   \item $x_{j}$ are the inputs of the regressions (independent vars)
    \medskip
    \item The $f_{k}$ $k=1,\dots K$ are the factors, unobserved, and that we want to estimate
   \medskip
-   \item $\phi_{jk}$  are called loadings or rotations—these
+   \item $\phi_{jk}$  are called loadings or rotations
   \medskip
    \item When you use a $K$ that is much smaller than $p$, factor models provide a parsimonious representation for $X$. 
    
@@ -387,7 +387,6 @@ X = \phi_1 f_1
 \end{align}
 
 \item and
-
 \begin{align}
 f_1 = \phi_1^{-1}X
 \end{align}
@@ -395,8 +394,11 @@ f_1 = \phi_1^{-1}X
 \item so we don't have to deal with inverses (things do not change), let's call $\delta_1=\phi_1^{-1}$
 
 \begin{align}
-f_1 = \delta_1 X
+f_1 &= \delta_1 X \\
+    &= \delta_{11} x_1+ \delta_{12} x_2 + \dots + \delta_{1k} x_k
 \end{align}
+
+\item This equation also illustrates the fact that the first principal component is a linear combination of the original variables. 
 \end{itemize}
 
 
@@ -465,12 +467,14 @@ A=\sum_{i=1}^{m}\lambda_{i}p_{i}p_{i}'
 \frametitle{Principal Component Analysis}
 
 \begin{align}
-f_1 = \delta_1 X
+f_1 &= \delta_1 X \\
+    &= \delta_{11} x_1+ \delta_{12} x_2 + \dots + \delta_{1k} x_k
 \end{align}
 
 
 \begin{itemize}
-
+  \item How are these components calculated in a way that preserves as much information as possible?
+  \medskip
   \item The task is then finding the best linear combination of the original variables.
   \medskip
   \item What is best?
@@ -858,7 +862,7 @@ trace(S) =  \sum_{j=1}^K V(F_j) = K
 \frametitle{Factor Interpretation}
 
 \begin{itemize}
-\item $f_s = X\delta'_s$ : 'loadings' often suggest that a factor works as a 'index' of a group of variables.
+\item $f_s = \delta_s X$ : 'loadings' often suggest that a factor works as a 'index' of a group of variables.
 \bigskip
 \item Idea: look at the 'loadings'
 \bigskip
@@ -905,7 +909,7 @@ trace(S) =  \sum_{j=1}^K V(F_j) = K
 
   \item Vote components in the $\bs{111^{th}}$ house
  
- \item Each PC is $f_s = X\delta'_s$ 
+ \item Each PC is $f_s = \delta_s X$ 
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
@@ -931,7 +935,7 @@ trace(S) =  \sum_{j=1}^K V(F_j) = K
 
   \item Vote components in the $\bs{111^{th}}$ house
  
- \item Each PC is $F_s = X\delta_s$ 
+ \item Each PC is $F_s = \delta_sX$ 
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
