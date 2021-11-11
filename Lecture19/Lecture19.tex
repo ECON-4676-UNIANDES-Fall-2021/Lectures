@@ -159,7 +159,7 @@
 
 \begin{document}
  
-\title[Lecture 18]{Lecture 18: \\ Classification}
+\title[Lecture 19]{Lecture 19: \\ Classification}
 \subtitle{Big Data and Machine Learning for Applied Economics \\ Econ 4676}
 \date{\today}
 
@@ -228,7 +228,7 @@ min_{\beta} NEL(\beta) &= \sum_{i=1}^n (y_i-x_i'\beta)^2 + \lambda_1 \sum_{s=2}^
 \item A set of variables that are useful for predicting $D_i$, say $X_{di}$.
 
 \end{enumerate}
-\item We then estimate $\alpha$ by ordinary least squares regression of $y_i$ on $d_i$ and the union of the variables selected for predicting $y_i$ and $D_i$, contained in $X_{yi}$ and $X_{di}$. 
+\item We then estimate $\alpha$ by ordinary least squares regression of $y_i$ on $D_i$ and the union of the variables selected for predicting $y_i$ and $D_i$, contained in $X_{yi}$ and $X_{di}$. 
 
 \item We thus make sure we use variables that are important for either of the two predictive relationships to guard against OVB
 
@@ -872,7 +872,7 @@ m(X) &= f(X|y=1)p(y=1) + f(X|y=0)p(y=0) \nonumber \\
   \medskip
   \item Dominated classifiers?
   \medskip
-  \item Which c? Choose a max $FPR$
+  \item Which c? Choose a max $TPR$
 
 \end{itemize}
 
