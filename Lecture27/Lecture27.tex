@@ -486,7 +486,7 @@
 
 \begin{itemize}
 
-  \item The disadvantage of PCR is that PCA will be driven by the dominant sources of variation in x. 
+  \item The disadvantage of PCR is that PCA will be driven by the dominant sources of variation in $X$. 
   \medskip
   \item If the response is connected to these dominant sources of variation, PCR works well.
   \medskip
@@ -534,8 +534,6 @@
 
 \begin{itemize}
   \item  An alternative mechanism is run a lasso  on the full set of PCs (works best in practice). 
-  \medskip
-\item You can then use the usual selection procedures to choose the $\lambda$ regularization weight. 
 \medskip
 \item This procedure makes it easy to incorporate other information in addition to the PCs. 
 \medskip
@@ -558,7 +556,7 @@
 
 \begin{itemize}
 
-\item Given a sample of regression input observations {xi}ni=1, accompanied by output labels yi for some subset of these observations: 1.
+\item Given a sample of regression input observations $x_i$, accompanied by output labels $y_i$ for some subset of these observations: 
 \medskip
 \begin{enumerate}
 
@@ -570,7 +568,7 @@
       \item Alternatively, regress $y$ on $f$  and $Xs$ to allow simultaneous selection between PCs and raw inputs. 
       \medskip
     \end{itemize}
-  \item To predict for a new $X_{f}$, use the rotations from step 1 to get $f = \phi X_f$ and then feed these scores into the regression fit from step 2. 
+  \item To predict for a new $X_{new}$, use the rotations from step 1 to get $f = \phi X_{new}$ and then feed these scores into the regression fit from step 2. 
   \end{enumerate}
 
 \end{itemize}
