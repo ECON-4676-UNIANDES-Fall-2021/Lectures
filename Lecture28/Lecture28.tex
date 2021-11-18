@@ -212,12 +212,19 @@
 
 \begin{itemize} 
   
+\item Factor Models:
+\medskip
+\begin{itemize}
+  \item Unsupervized: PCA 
+\medskip 
+  \item Supervized: 
+  \begin{itemize}
+    \item PCR
+    \medskip
+    \item PLS (MR)
+  \end{itemize}
+\end{itemize}
 
-\item PCA 
-\bigskip
-\item PCA Regression 
-\bigskip
-\item Latent Dirichlet Allocation (LDA): Example
 
 \end{itemize}
   
@@ -231,20 +238,165 @@
 \tableofcontents
 
 \end{frame}
+%----------------------------------------------------------------------%
+\section{Presentation Rafael }
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\section{Latent Dirichlet Allocation}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{itemize}
+
+
+\item The approach of using PCA to factorize text was common before the 2000s. 
+\medskip
+\item Versions of this algorithm were referred to under the label latent semantic analysis. 
+\medskip
+\item However, this changed with the introduction of topic modeling, also known as Latent Dirichlet Allocation (LDA), by Blei et al. in 2003. 
+\medskip
+\item These authors pointed out that the squared error loss (i.e., Gaussian model) implied by PCA is inappropriate for analysis of sparse word-count data. 
+\medskip
+
+\end{itemize}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[width=4in]{figures/hansen1.png}
+              
+ \end{figure}
+
+ \end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/weigel1.png}
+              
+ \end{figure}
+
+ \end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/weigel2.png}
+              
+ \end{figure}
+
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{itemize}
+\item Blei et al. proposed you take the bag-of-words representation seriously and model token counts as realizations from a multinomial distribution. 
+
+\medskip
+\item Topic models are built on a simple document generation process: 
+\medskip
+\begin{itemize}
+
+\item  For each word, pick a “topic” k. This topic is defined through a probability vector over words, say, $\theta_k$ with probability $\theta_{kj}$ for each word j. 
+\medskip
+\item Then draw the word according to the probabilities encoded in $\theta_k$ . 
+\medskip
+\end{itemize}
+\item After doing this over and over for each word in the document, you have proportion $\omega_{i1}$ from topic 1, $\omega_{i2}$ from topic 2, and so on. 
+
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation}
+
+\begin{itemize}
+
+
+\item This basic generation process implies that the full vector of word counts, $x_i$, has a multinomial  distribution: 
+\medskip
+\begin{align}
+x_i \sim MN(\omega_{i1}\theta_1+\dots+\omega_{iK}\theta_K,m_i)
+\end{align}
+\medskip
+\item where $m_i=\sum_j x_{ij}$ is the total document length and, for example, 
+\medskip
+\item the probability of word j in document i will be $\sum_k \omega_{ik}\theta_{kj}$
+
+\end{itemize}
+
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Latent Dirichlet Allocation vs PCA}
+
+\begin{itemize}
+\item Recall our PC model:
+\medskip
+\begin{align}
+E(x_i) = \delta_{i1} F_1 + \dots + \delta_{iK} F_K
+\end{align}
+
+\medskip
+\item The analogous topic model representation, implied by the above equation, is
+\medskip
+\begin{align}
+E(\frac{x_i}{m_i}) = \omega_{i1} \theta_1 + \dots + \omega_{iK} \theta_K
+\end{align}
+
+ 
+
+\item such that topic score $\omega_{ik}$ is like PC score $\delta_{ik}$ and 
+\item $\theta_k$ topic probabilities are like rotations $F_k$. 
+\item The distinction is that the multinomial in implies a different loss function ( from a multinomial) rather than the sums of squared errors that PCA minimizes. 
+\item Note that we condition on document length here so that topics are driven by relative rather than absolute term usage. 
+\end{itemize}
+
+\end{frame}
 
 %----------------------------------------------------------------------%
-\section{Word Embedding }
+\section{Word Embeddings}
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{}
+
+
+\centering
+{\huge \textcolor{andesred}{Word Embeddings}}
+
+
+\end{frame}
+
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Word Embedding }
 
 \begin{itemize}
-\item This is a new method  that have come out of work in deep learning. 
+\item This is a ``new'' method  that have come out of work in deep learning. 
 \medskip
 \item Word embedding was originally motivated as a technique for dimension reduction on the inputs to a deep neural network. 
 \medskip
 \medskip
-\item However, word embedding turns out to be valuable in its own right: it imposes a spatial structure on words, making it possible for those studying language to reason about distances between meanings and consider the algebra behind combinations of words in documents. 
+\item However,  it imposes a spatial structure on words,
+
+\begin{itemize}
+ \item Allowing to get  meanings from distance among words
+ \medskip
+ \item Consider the algebra behind combinations of words in documents. 
+ \end{itemize} 
 
 
 \end{itemize}
@@ -258,7 +410,10 @@
 \frametitle{Word Embedding }
 
 \begin{itemize}
-  \item In the original deep learning context, embedding layers replace each word with a vector value, such that, for example, hotdog becomes the location [1,–5, 0.25] in a three-dimensional embedding space% (this is just for illustration; embedding spaces are typically of more than 100 dimensions). 
+  \item In the original deep learning context, embedding layers replace each word with a vector value
+  \begin{itemize}
+    \item for example, hotdog becomes the location [1,–5, 0.25] in a three-dimensional embedding space% (this is just for illustration; embedding spaces are typically of more than 100 dimensions). 
+   \end{itemize} 
   \item Compare this to the standard bag-of-words representation, where hotdog would be represented as a binary vector that is as long as there are words in the vocabulary, say, p. 
   \medskip
   \item This binary vector will have p–1 zeros and a one in the hotdog dimension. 
@@ -315,37 +470,32 @@
 \frametitle{Word Embedding }
 
 \begin{itemize}
-\item One way to find U and V is to solve $C\approx UV'$ through the singular value decomposition (SVD).
-\item SVD is a factorization of a real or complex matrix, that serves for example, to find the eigenvalues and eigenvectors of square symmetric matrices (and hence in calculating principal components). 
-\item In practice, most of the software embedding solutions use alternatives to SVD that are designed to deal with the high amount of sparsity in C (since most words never co-occur in limited windows for standard corpora). 
+  \item One way to find U and V is to solve $C\approx UV'$ through the singular value decomposition (SVD).
+  \medskip
 
-\item Under many algorithms, especially when co-occurrence is symmetric, U and V will be mirror images of each other. 
-\item Thus, it is standard to take one of these vectors $u_j$ as the single embedding location for word j.
+ \item These locations were originally viewed as an intermediate output—as a processing step for inputs to a deep neural network.
+ \medskip
+\item However, social scientists and linguists have discovered that the space of word locations contains rich information about the language of the documents used to train the embedding. 
 \end{itemize}
-
-
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Word Embedding }
 
 \begin{itemize}
-
-
- \item These locations were originally viewed as an intermediate output—as a processing step for inputs to a deep neural network.
-\item However, social scientists and linguists have discovered that the space of word locations contains rich information about the language of the documents used to train the embedding. 
 
 
 \item Word embeddings preserve semantic relationships.
   \begin{itemize}
     \item Words with similar meaning have similar representations.
+    \medskip
     \item Dimensions induced by word differences can be used to identify cultural concepts 
   \end{itemize}
   \item For example, the vector difference \texttt{man - woman} isolates a gender dimension in the space.
-   \item  The dimensions are useful because they produce quantitative measures of similarity between the associated concepts and specific words in the corpus. 
-   \item In this case, we can understand the gender connotation of a given word by taking the cosine of the angle between the vector representation of the word and the differenced vector representing the gender dimension (why?)
+  \medskip
+  \item  The dimensions are useful because they produce quantitative measures of similarity between the associated concepts and specific words in the corpus. 
+  \end{itemize}
 
-\end{itemize}
 
 \end{frame}
 
@@ -354,12 +504,16 @@
 \frametitle{Word Embedding }
 
 \begin{itemize}
-\item Recall the geometric interpretation of the angle between two vectors defined using an inner product
+  \item In this case, we can understand the gender connotation of a given word by taking the cosine of the angle between the vector representation of the word and the differenced vector representing the gender dimension 
+  \medskip 
+\item This is because the cosine of the angle, can be interpreted as a similarity measure.
+\medskip
+\item The similarity ranges from -1 meaning exactly opposite, to 1 meaning exactly the same, with 0 indicating orthogonality or decorrelation, while in-between values indicate intermediate similarity or dissimilarity. 
 \end{itemize}
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
-              \includegraphics[scale=0.4]{figures/Inner_product_angle.png}
+              \includegraphics[scale=0.14]{figures/Inner_product_angle.png}
               
  \end{figure}
 
@@ -389,7 +543,7 @@
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
-              \includegraphics[scale=0.4]{figures/bolukbasi}
+              \includegraphics[scale=0.3]{figures/bolukbasi}
               
  \end{figure}
 
@@ -445,6 +599,8 @@
  \end{figure}
 
 \end{frame}
+%----------------------------------------------------------------------%
+\section{Word Embedding: Demo }
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Word Embedding: Demo }
