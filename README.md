@@ -47,4 +47,5 @@
 - Lecture 28 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture28/Lecture28.pdf)\] \[[Recording](https://www.dropbox.com/sh/ubv9r1i1ht8ak37/AACqm6YAoYkr6ZVwGrKftJdoa?dl=0)\]
 - TA Session 14 \[[Recording](https://uniandes-my.sharepoint.com/personal/r_cano_uniandes_edu_co/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fr%5Fcano%5Funiandes%5Fedu%5Fco%2FDocuments%2FBDL%2FGrabaciones%20complementarias%2FComplementaria%2013)\]
 - Lecture 29 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture29/Lecture29.pdf)\]\[[Recording](https://www.dropbox.com/sh/udm96t5ej16dm7p/AABVElAb4AhujimbCVFuWwH7a?dl=0)\]
+- Lecture 30 \[[Slides](https://github.com/ECON-4676-UNIANDES-Fall-2021/Lectures/blob/main/Lecture30/Lecture30.pdf)\]\[[Recording]()\]
 
