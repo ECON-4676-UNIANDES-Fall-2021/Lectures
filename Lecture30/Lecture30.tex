@@ -210,7 +210,9 @@
 \frametitle{Announcements }
 
 \begin{itemize}
-\item Friday presentations Problem Set 5 
+\item PS4 grades are up (great job!!)
+    \medskip
+\item Friday PS5 presentations
 \medskip
 \item Today you need to submit a .csv by 8:00 pm. 
   \begin{itemize}
@@ -218,10 +220,10 @@
     \medskip
     \item Name it as \texttt{predictions-problem\_set\_5\_sarmiento-cano.csv}
     \medskip
-    \item If I can't grab you predictions file from your repo with  \texttt{grep} you won't get credit for the problem set.
+    \item If I can't grab you predictions file from your repo with  \texttt{grep} you won't get credit.
     \medskip 
   \end{itemize}
-  \item Friday upload Problem Set 6: {\it ``To finish your journey,  formulate a theoretical question based on the topics learned so far. It can be anything you want as long as it relates to the course. Your grade will depend on the ``ingenuity'' of the question and the ``correctness'' of the answer.''}
+  \item Friday upload PS 6: {\it ``To finish your journey,  formulate a theoretical question based on the topics learned so far. It can be anything you want as long as it relates to the course. Your grade will depend on the ``ingenuity'' of the question and the ``correctness'' of the answer.''}
 \end{itemize}
 
 \end{frame}
@@ -658,19 +660,13 @@ max\{0,XW+c\}=\left(\begin{array}{cc}
 \begin{itemize}
 \item In this example, we simply specified the solution, then showed that
 it obtained zero error.
-\item In a real situation, there might be billions of model parameters and
-billions of training examples, so one cannot simply guess the solution
-as we did here.
-\item Instead, a gradient-based optimization algorithm can find parameters
-that produce very little error. 
-\item The solution we described to the XOR problem is at a global minimum
-of the loss function, so gradient descent could converge to this point.
-\item There are other equivalent solutions to the XOR problem that gradient
-descent could also find. 
-\item The convergence point of gradient descent depends on the initial values
-of the parameters. 
-\item In practice, gradient descent would usually not find clean, easily
-understood, integer-valued solutions like the one we presented here.
+\item In a real situation, obviously we can't guess the solution
+
+\item What we do is gradient based optimization
+
+\item Remember that the convergence point of gradient descent depends on the initial values
+of the parameters and step size. 
+\item In practice, gradient descent would usually not find clean, easily understood, integer-valued solutions like we did here.
 \end{itemize}
 
 
@@ -728,19 +724,19 @@ understood, integer-valued solutions like the one we presented here.
 \frametitle{Multilayer Perceptrons: Theory}
 
 \begin{itemize}
-    \item The gain comes from using nonlinear activation function $\sigma$
+    \item The gain comes from using nonlinear activation function $f$
     \item Note that, with activation functions in place, it is no longer possible to collapse our MLP into a linear model:
 
  \begin{align} 
- \mathbf{H} & = \sigma(\mathbf{X} \mathbf{W}^{(1)} + \mathbf{b}^{(1)}), \\ \nonumber
+ \mathbf{H} & = f(\mathbf{X} \mathbf{W}^{(1)} + \mathbf{b}^{(1)}), \\ \nonumber
  \mathbf{Y} & = \mathbf{H}\mathbf{W}^{(2)} + \mathbf{b}^{(2)}.
  \end{align} 
 
 \item Note that we can build more general MLPs, by stacking hidden layers, yielding ever more expressive models.
 
 \begin{align}
-\mathbf{H}^{(1)} &= \sigma_1(\mathbf{X} \mathbf{W}^{(1)} + \mathbf{b}^{(1)}) \\ \nonumber
-\mathbf{H}^{(2)} &= \sigma_2(\mathbf{H}^{(1)} \mathbf{W}^{(2)} + \mathbf{b}^{(2)}) \\ \nonumber
+\mathbf{H}^{(1)} &= f_1(\mathbf{X} \mathbf{W}^{(1)} + \mathbf{b}^{(1)}) \\ \nonumber
+\mathbf{H}^{(2)} &= f_2(\mathbf{H}^{(1)} \mathbf{W}^{(2)} + \mathbf{b}^{(2)}) \\ \nonumber
 \mathbf{Y} & = \mathbf{H}^{2}\mathbf{W}^{(3)} + \mathbf{b}^{(3)}.
 \end{align}
 
@@ -753,7 +749,7 @@ understood, integer-valued solutions like the one we presented here.
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Activation Functions}
-
+\framesubtitle{ReLU Function}
 \begin{itemize}
 \item Activation functions are fundamental to deep learning, let us briefly survey some common activation functions.
 \medskip
@@ -774,7 +770,7 @@ $$\operatorname{ReLU}(x) = \max \{x, 0\}.$$
 \frametitle{Activation Functions}
 
 \begin{itemize}
-\item  ReLU function retains only positive elements and discards all negative elements by setting the corresponding activations to 0. 
+\item  ReLU function retains only positive elements and discards all negative elements by setting them to 0. 
 \item It is piecewise linear.
 \end{itemize}
 
@@ -812,17 +808,12 @@ $$\operatorname{ReLU}(x) = \max \{x, 0\}.$$
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Activation Functions}
-
+\framesubtitle{Sigmoid Function (Logit)}
 
 
 
 
 \begin{itemize}
-
-\item Sigmoid Function
-
-\begin{itemize}
-
 
 
 \item The sigmoid function transforms its inputs, for which values lie in the domain $\mathbb{R}$, to outputs that lie on the interval (0, 1). 
@@ -830,11 +821,8 @@ $$\operatorname{ReLU}(x) = \max \{x, 0\}.$$
 
 $$\operatorname{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 
-\item In the earliest neural networks, scientists were interested in modeling biological neurons which either fire or do not fire. Thus the pioneers of this field, going all the way back to McCulloch and Pitts, the inventors of the artificial neuron, focused on thresholding units. A thresholding activation takes value 0 when its input is below some threshold and value 1 when the input exceeds the threshold.
 
-\item When attention shifted to gradient based learning, the sigmoid function was a natural choice because it is a smooth, differentiable approximation to a thresholding unit. 
 
-    \end{itemize}
 \end{itemize}    
 
 
@@ -843,15 +831,9 @@ $$\operatorname{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Activation Functions}
+\framesubtitle{Sigmoid Function (Logit)}
 
 
-
-
-\begin{itemize}
-
-\item Sigmoid Function
-
-\end{itemize}
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
@@ -859,76 +841,45 @@ $$\operatorname{sigmoid}(x) = \frac{1}{1 + \exp(-x)}.$$
               
  \end{figure}
 
-\end{frame}
+ \begin{itemize}
+\scriptsize
+    \item In the earliest neural networks, scientists were interested in modeling biological neurons which either fire or do not fire. Thus the pioneers of this field, going all the way back to McCulloch and Pitts, the inventors of the artificial neuron, focused on thresholding units. 
+    \item A thresholding activation takes value 0 when its input is below some threshold and value 1 when the input exceeds the threshold.
 
+    \item When attention shifted to gradient based learning, the sigmoid function was a natural choice because it is a smooth, differentiable approximation to a thresholding unit. 
+    \end{itemize}
+
+\end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Activation Functions}
-
-\begin{itemize}
-\item The derivative of the sigmoid function is given by the following equation:
-
-$$\frac{d}{dx} \operatorname{sigmoid}(x) = \frac{\exp(-x)}{(1 + \exp(-x))^2} = \operatorname{sigmoid}(x)\left(1-\operatorname{sigmoid}(x)\right).$$
-
-\end{itemize}
+\framesubtitle{$Tanh$ Function}
 
 
 
 
-  \begin{figure}[H] \centering
-            \captionsetup{justification=centering}
-              \includegraphics[scale=0.45]{figures/sigmoid_dev}
-              
- \end{figure}
-
-\end{frame}
-
-%----------------------------------------------------------------------%
-\begin{frame}
-\frametitle{Activation Functions}
-
-
-
-
-\begin{itemize}
     
-\item $Tanh$ Function
+
   \begin{itemize}
         \item Like the sigmoid function, the tanh (hyperbolic tangent) function also squashes its inputs, transforming them into elements on the interval between -1 and 1:
-
+        \medskip
         $$\operatorname{tanh}(x) = \frac{1 - \exp(-2x)}{1 + \exp(-2x)}.$$
-
+\medskip
         \item Although the shape of the function is similar to that of the sigmoid function, the $tanh$ function exhibits point symmetry about the origin of the coordinate system.
-    \end{itemize}
+    
 \end{itemize}
-
-  \begin{figure}[H] \centering
-            \captionsetup{justification=centering}
-              \includegraphics[scale=0.45]{figures/tanh}
-              
- \end{figure}
-
 \end{frame}
-
 %----------------------------------------------------------------------%
 \begin{frame}
 \frametitle{Activation Functions}
-
-\begin{itemize}
-\item The derivative of the $tanh$ function is:
-
-$$\frac{d}{dx} \operatorname{tanh}(x) = 1 - \operatorname{tanh}^2(x).$$
-
-\item The derivative of $tanh$ function is plotted below. As the input nears 0, the derivative of the $tanh$ function approaches a maximum of 1. And as we saw with the sigmoid function, as the input moves away from 0 in either direction, the derivative of the $tanh$ function approaches 0.
-\end{itemize}
+\framesubtitle{$Tanh$ Function}
 
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
-              \includegraphics[scale=0.45]{figures/tanh_dev}
+              \includegraphics[scale=0.65]{figures/tanh}
               
  \end{figure}
-
 
 
 \end{frame}
@@ -1069,9 +1020,138 @@ $$\frac{d}{dx} \operatorname{tanh}(x) = 1 - \operatorname{tanh}^2(x).$$
 \end{frame}
 %----------------------------------------------------------------------%
 \subsection{Demo}
+\subsubsection{MLP}
+
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
 \frametitle{Deep Learning: Demo}
+
+
+
+
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(keras)}
+\NormalTok{fashion\_mnist \textless{}{-}}\StringTok{ }\KeywordTok{dataset\_fashion\_mnist}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+  \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/fashion-mnist-sprite}
+              
+ \end{figure}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Deep Learning: Demo}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+
+\KeywordTok{c}\NormalTok{(train\_images, train\_labels) }\OperatorTok{\%\textless{}{-}\%}\StringTok{ }\NormalTok{fashion\_mnist}\OperatorTok{$}\NormalTok{train}
+\KeywordTok{c}\NormalTok{(test\_images, test\_labels) }\OperatorTok{\%\textless{}{-}\%}\StringTok{ }\NormalTok{fashion\_mnist}\OperatorTok{$}\NormalTok{test}
+
+\NormalTok{class\_names =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{\textquotesingle{}T{-}shirt/top\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Trouser\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Pullover\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Dress\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Coat\textquotesingle{}}\NormalTok{, }
+                \StringTok{\textquotesingle{}Sandal\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Shirt\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Sneaker\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Bag\textquotesingle{}}\NormalTok{,}
+                \StringTok{\textquotesingle{}Ankle boot\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Deep Learning: Demo}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train\_images \textless{}{-}}\StringTok{ }\NormalTok{train\_images }\OperatorTok{/}\StringTok{ }\DecValTok{255}
+\NormalTok{test\_images \textless{}{-}}\StringTok{ }\NormalTok{test\_images }\OperatorTok{/}\StringTok{ }\DecValTok{255}
+\end{Highlighting}
+\end{Shaded}
+
+  \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.4]{figures/unnamed-chunk-5-1.pdf}
+              
+ \end{figure}
+
+ \end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Deep Learning: Demo}
+
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model \textless{}{-}}\StringTok{ }\KeywordTok{keras\_model\_sequential}\NormalTok{()}
+\NormalTok{model }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{layer\_flatten}\NormalTok{(}\DataTypeTok{input\_shape =} \KeywordTok{c}\NormalTok{(}\DecValTok{28}\NormalTok{, }\DecValTok{28}\NormalTok{)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{layer\_dense}\NormalTok{(}\DataTypeTok{units =} \DecValTok{128}\NormalTok{, }\DataTypeTok{activation =} \StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{layer\_dense}\NormalTok{(}\DataTypeTok{units =} \DecValTok{10}\NormalTok{, }\DataTypeTok{activation =} \StringTok{\textquotesingle{}softmax\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{compile}\NormalTok{(}
+  \DataTypeTok{optimizer =} \StringTok{\textquotesingle{}adam\textquotesingle{}}\NormalTok{, }
+  \DataTypeTok{loss =} \StringTok{\textquotesingle{}sparse\_categorical\_crossentropy\textquotesingle{}}\NormalTok{,}
+  \DataTypeTok{metrics =} \KeywordTok{c}\NormalTok{(}\StringTok{\textquotesingle{}accuracy\textquotesingle{}}\NormalTok{)}
+\NormalTok{)}
+\NormalTok{model }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{fit}\NormalTok{(train\_images, train\_labels, }\DataTypeTok{epochs =} \DecValTok{5}\NormalTok{, }\DataTypeTok{verbose =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Deep Learning: Demo}
+\begin{scriptsize}
+\begin{verbatim}
+## Epoch 1/5
+## 1875/1875 - 2s - loss: 0.5003 - accuracy: 0.8238
+## Epoch 2/5
+## 1875/1875 - 2s - loss: 0.3782 - accuracy: 0.8643
+## Epoch 3/5
+## 1875/1875 - 2s - loss: 0.3362 - accuracy: 0.8784
+## Epoch 4/5
+## 1875/1875 - 2s - loss: 0.3141 - accuracy: 0.8844
+## Epoch 5/5
+## 1875/1875 - 2s - loss: 0.2934 - accuracy: 0.8922
+\end{verbatim}
+\end{scriptsize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{score \textless{}{-}}\StringTok{ }\NormalTok{model }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\KeywordTok{evaluate}\NormalTok{(test\_images, test\_labels, }\DataTypeTok{verbose =} \DecValTok{0}\NormalTok{)}
+
+\KeywordTok{cat}\NormalTok{(}\StringTok{\textquotesingle{}Test loss:\textquotesingle{}}\NormalTok{, score[}\DecValTok{1}\NormalTok{], }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{scriptsize}
+
+\begin{verbatim}
+## Test loss: 0.3377942
+
+## Test accuracy: 0.8792
+\end{verbatim}
+\end{scriptsize}
+\end{frame}
+%----------------------------------------------------------------------%
+\subsubsection{CNN}
+%----------------------------------------------------------------------%
+\begin{frame}[fragile]
+\frametitle{Deep Learning: CNN demo and teaser}
 
 \begin{scriptsize}
 
@@ -1080,7 +1160,6 @@ $$\frac{d}{dx} \operatorname{tanh}(x) = 1 - \operatorname{tanh}^2(x).$$
 \CommentTok{\#packages}
 \KeywordTok{library}\NormalTok{(tensorflow)}
 \KeywordTok{library}\NormalTok{(keras)}
-
 \CommentTok{\#load the data}
 \NormalTok{cifar \textless{}{-}}\StringTok{ }\KeywordTok{dataset\_cifar10}\NormalTok{()}
 \end{Highlighting}
@@ -1102,9 +1181,19 @@ $$\frac{d}{dx} \operatorname{tanh}(x) = 1 - \operatorname{tanh}^2(x).$$
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Deep Learning: Demo}
+\frametitle{Deep Learning: CNN demo and teaser}
 
-Create the convolutional base
+
+
+
+
+  \begin{figure}[H] \centering
+            \captionsetup{justification=centering}
+              \includegraphics[scale=0.25]{figures/convolutional.png}
+              \\
+              \tiny
+             
+ \end{figure}
 \begin{scriptsize}
 
 
@@ -1117,11 +1206,7 @@ Create the convolutional base
 \StringTok{  }\KeywordTok{layer\_conv\_2d}\NormalTok{(}\DataTypeTok{filters =} \DecValTok{64}\NormalTok{, }\DataTypeTok{kernel\_size =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{), }\DataTypeTok{activation =} \StringTok{"relu"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
 \StringTok{  }\KeywordTok{layer\_max\_pooling\_2d}\NormalTok{(}\DataTypeTok{pool\_size =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
 \StringTok{  }\KeywordTok{layer\_conv\_2d}\NormalTok{(}\DataTypeTok{filters =} \DecValTok{64}\NormalTok{, }\DataTypeTok{kernel\_size =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{), }\DataTypeTok{activation =} \StringTok{"relu"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
 \KeywordTok{summary}\NormalTok{(model)}
 \end{Highlighting}
 \end{Shaded}
@@ -1130,7 +1215,7 @@ Create the convolutional base
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Deep Learning: Demo}
+\frametitle{Deep Learning: CNN demo and teaser}
 
 \begin{tiny}
 \begin{verbatim}
@@ -1158,8 +1243,8 @@ Create the convolutional base
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Deep Learning: Demo}
-\framesubtitle{Keep adding layers}
+\frametitle{Deep Learning: CNN demo and teaser}
+\framesubtitle{More layers}
 \begin{scriptsize}
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1205,7 +1290,7 @@ Create the convolutional base
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Deep Learning: Demo}
+\frametitle{Deep Learning: CNN demo and teaser}
 
 \begin{scriptsize}
 \begin{Shaded}
@@ -1231,7 +1316,7 @@ Create the convolutional base
 \end{frame}
 %----------------------------------------------------------------------%
 \begin{frame}[fragile]
-\frametitle{Deep Learning: Demo}
+\frametitle{Deep Learning: CNN demo and teaser}
 
   \begin{figure}[H] \centering
             \captionsetup{justification=centering}
@@ -1273,7 +1358,7 @@ Create the convolutional base
 \bigskip
 \item Please fill the perception survey \url{https://encuestacursosuniandes.com/}
     \bigskip  
-  \item  Next class:  Problem Set 5 presentations and turn in PS6
+  \item  Next class:  PS5 presentations and turn in PS6
 
 
 \bigskip  
