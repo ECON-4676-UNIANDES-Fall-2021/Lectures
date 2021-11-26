@@ -330,10 +330,10 @@ Overall: 5, Atmosphere: 5, Food: 5, Service: 5, Value: 5.
 \item A factor model looks like 
 
 \begin{align}
-x_{1}&=  \phi_{11} f_{1} + \dots + \phi_{1k} f_{k} \\ \nonumber
-x_{2}&=  \phi_{21} f_{1} + \dots + \phi_{2k} f_{k} \\ \nonumber
+x_{1}&=  \phi_{11} f_{1} + \dots + \phi_{1p} f_{p} \\ \nonumber
+x_{2}&=  \phi_{21} f_{1} + \dots + \phi_{2p} f_{p} \\ \nonumber
 &\vdots  \\ \nonumber
-x_{p} &=  \phi_{p1} f_{1} + \dots + \phi_{pk} f_{k} \\ \nonumber
+x_{p} &=  \phi_{n1} f_{1} + \dots + \phi_{np} f_{p} \\ \nonumber
 \end{align}
 
 \item where 
@@ -341,11 +341,11 @@ x_{p} &=  \phi_{p1} f_{1} + \dots + \phi_{pk} f_{k} \\ \nonumber
     \footnotesize
    \item $x_{j}$ are the inputs of the regressions (independent vars)
    \medskip
-   \item The $f_{k}$ $k=1,\dots K$ are the factors, unobserved, and that we want to estimate
+   \item The $f_{p}$ $p=1,\dots P$ are the factors, unobserved, and that we want to estimate
   \medskip
-   \item $\phi_{jk}$  are called loadings or rotations
+   \item $\phi_{jp}$  are called loadings or rotations
   \medskip
-   \item When you use a $K$ that is much smaller than $p$, factor models provide a parsimonious representation for $X$. 
+   \item When you use a $p$ that is much smaller than $n$, factor models provide a parsimonious representation for $X$. 
    
   \end{itemize}
 
@@ -369,7 +369,7 @@ x_{p} &=  \phi_{p1} f_{1} + \dots + \phi_{pk} f_{k} \\ \nonumber
 x_{1}&=  \phi_{11} f_{1} \\ \nonumber
 x_{2}&=  \phi_{21} f_{1} \\ \nonumber
 &\vdots  \\ \nonumber
-x_{p} &=  \phi_{p1} f_{1} \\ \nonumber
+x_{n} &=  \phi_{n1} f_{1} \\ \nonumber
 \end{align}
 
 
@@ -433,7 +433,7 @@ det(A) &= \Pi_{i=1}^m \lambda_i
 \item Spectral decomposition: 
 \medskip
 \begin{align}
-A = P\Lambda P
+A = P\Lambda P'
 \end{align}
  
 \item where $\Lambda = diag(\lambda_1, \dots \lambda_m )$ and $P$ is the matrix whose columns are the corresponding eigenvectors.
@@ -684,7 +684,7 @@ trace(S) = trace(P \Lambda P')= trace(PP' \Lambda ) = \sum_{j=1}^K \lambda_j= \s
 
 \begin{itemize}
 
-\item Although a matrix  $X$ of dimension $ n \ times K $ generally has $min (n-1, K)$ different principal components.
+\item Although a matrix  $X$ of dimension $ n \times K $ generally has $min (n-1, K)$ different principal components.
 \medskip
 \item  In practice, we are generally not interested in all the components, but rather stay with the first ones that allow us to visualize or interpret data. 
 \medskip
@@ -778,7 +778,7 @@ trace(S) =  \sum_{j=1}^K V(F_j) = K
 
 \begin{itemize}
 
-\item Befroe I mentioned that  data was standardized, that is, re-centered to have zero mean and scaled to have variance one. 
+\item Before I mentioned that  data was standardized, that is, re-centered to have zero mean and scaled to have variance one. 
 \medskip
 \item From a strictly mathematical point of view, there is nothing inherently wrong with making linear combinations of variables with different units of measurement. 
 \medskip
