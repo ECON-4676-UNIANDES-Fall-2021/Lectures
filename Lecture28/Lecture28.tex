@@ -215,9 +215,9 @@
 \item Factor Models:
 \medskip
 \begin{itemize}
-  \item Unsupervized: PCA 
+  \item Unsupervised: PCA 
 \medskip 
-  \item Supervized: 
+  \item Supervised: 
   \begin{itemize}
     \item PCR
     \medskip
@@ -346,7 +346,7 @@ x_i \sim MN(\omega_{i1}\theta_1+\dots+\omega_{iK}\theta_K,m_i)
 \item Recall our PC model:
 \medskip
 \begin{align}
-E(x_i) = \delta_{i1} F_1 + \dots + \delta_{iK} F_K
+E(x_i) = \delta_{i1} f_1 + \dots + \delta_{iK} f_K
 \end{align}
 
 \medskip
@@ -359,7 +359,7 @@ E(\frac{x_i}{m_i}) = \omega_{i1} \theta_1 + \dots + \omega_{iK} \theta_K
  
 
 \item such that topic score $\omega_{ik}$ is like PC score $\delta_{ik}$ and 
-\item $\theta_k$ topic probabilities are like rotations $F_k$. 
+\item $\theta_k$ topic probabilities are like rotations $f_k$. 
 \item The distinction is that the multinomial in implies a different loss function ( from a multinomial) rather than the sums of squared errors that PCA minimizes. 
 \item Note that we condition on document length here so that topics are driven by relative rather than absolute term usage. 
 \end{itemize}
@@ -489,7 +489,7 @@ E(\frac{x_i}{m_i}) = \omega_{i1} \theta_1 + \dots + \omega_{iK} \theta_K
   \begin{itemize}
     \item Words with similar meaning have similar representations.
     \medskip
-    \item Dimensions induced by word differences can be used to identify cultural concepts 
+    \item Dimensions induced by word differences can be used to identify cultural concepts.
   \end{itemize}
   \item For example, the vector difference \texttt{man - woman} isolates a gender dimension in the space.
   \medskip
