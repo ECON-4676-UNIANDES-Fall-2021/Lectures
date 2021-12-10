@@ -1,0 +1,307 @@
+\documentclass[
+  shownotes,
+  xcolor={svgnames},
+  hyperref={colorlinks,citecolor=DarkBlue,linkcolor=DarkRed,urlcolor=DarkBlue}
+  , aspectratio=169]{beamer}
+\usepackage{animate}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{mathpazo}
+%\usepackage{xcolor}
+\usepackage{multimedia}
+\usepackage{fancybox}
+\usepackage[para]{threeparttable}
+\usepackage{multirow}
+\setcounter{MaxMatrixCols}{30}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage[compatibility=false,font=small]{caption}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{chronosys}
+\usepackage{appendixnumberbeamer}
+\usepackage{animate}
+\setbeamertemplate{caption}[numbered]
+\usepackage{color}
+%\usepackage{times}
+\usepackage{tikz}
+\usepackage{comment} %to comment
+%% BibTeX settings
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{,}{a}{,}{,}
+\setbeamertemplate{bibliography item}{[\theenumiv]}
+
+% Defines columns for bespoke tables
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\usepackage{xfrac}
+
+
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+
+% Theme and colors
+\usetheme{Boadilla}
+
+% I use steel blue and a custom color palette. This defines it.
+\definecolor{andesred}{HTML}{af2433}
+
+% Other options
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\usefonttheme{serif}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[square]
+\setbeamertemplate{section in toc}[circle]
+
+\makeatletter
+
+\definecolor{mybackground}{HTML}{82CAFA}
+\definecolor{myforeground}{HTML}{0000A0}
+
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=black}
+
+\setbeamercolor{background canvas}{fg=myforeground, bg=white}
+\setbeamercolor{background}{fg=myforeground, bg=mybackground}
+
+\setbeamercolor{palette primary}{fg=black, bg=gray!30!white}
+\setbeamercolor{palette secondary}{fg=black, bg=gray!20!white}
+\setbeamercolor{palette tertiary}{fg=white, bg=andesred}
+
+\setbeamercolor{frametitle}{fg=andesred}
+\setbeamercolor{title}{fg=andesred}
+\setbeamercolor{block title}{fg=andesred}
+\setbeamercolor{itemize item}{fg=andesred}
+\setbeamercolor{itemize subitem}{fg=andesred}
+\setbeamercolor{itemize subsubitem}{fg=andesred}
+\setbeamercolor{enumerate item}{fg=andesred}
+\setbeamercolor{item projected}{bg=gray!30!white,fg=andesred}
+\setbeamercolor{enumerate subitem}{fg=andesred}
+\setbeamercolor{section number projected}{bg=gray!30!white,fg=andesred}
+\setbeamercolor{section in toc}{fg=andesred}
+\setbeamercolor{caption name}{fg=andesred}
+\setbeamercolor{button}{bg=gray!30!white,fg=andesred}
+
+
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+
+\usepackage{tikz}
+% Tikz settings optimized for causal graphs.
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    state/.style ={ellipse, draw, minimum width = 0.7 cm},
+    point/.style = {circle, draw, inner sep=0.04cm,fill,node contents={}},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+
+
+\makeatother
+
+
+
+
+
+
+%%%%%%%%%%%%%%% BEGINS DOCUMENT %%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[Lecture 30b]{Lecture 30b: \\ Problem Set 5 Presentations}
+\subtitle{Big Data and Machine Learning for Applied Economics \\ Econ 4676}
+\date{\today}
+
+\author[Sarmiento-Barbieri]{Ignacio Sarmiento-Barbieri}
+\institute[Uniandes]{Universidad de los Andes}
+
+
+\begin{frame}[noframenumbering]
+\maketitle
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{``A rose by any other name would smell as sweet'' Juliet Capulet }
+
+\begin{itemize}
+
+\item There is an adage that says, {\it “choose your words carefully.”} Words themselves may reveal far more than what we’re trying to say. There’s mounting evidence that our written words show who we are.
+\medskip
+\item The objective today is to predict to whom each tweet belongs. The training dataset contains around 7,000 tweets of four prominent Colombian politicians' accounts: Claudia Lopez, Gustavo Petro, Alvaro Uribe, y Alejandro Gaviria. The test dataset contains 500 unlabeled tweets. We want to predict which account posted the tweets in the test set. 
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Results}
+
+\begin{table}[H] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} clcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & Team & Rigth & Wrong \\ 
+\hline \\[-1.8ex] 
+1 & Prieto, Segura, Navarro & $1,622$ & $378$ \\ 
+2 & Acero, Pacheco, Saenz & $1,617$ & $383$ \\ 
+3 & Cortes, Rojas, Pena, Salazar & $1,537$ & $425$ \\ 
+4 & Agudelo, Cepeda, Cifuentes, Mosquera & $1,442$ & $558$ \\ 
+5 & Gonzalez, Rengifo & $1,431$ & $569$ \\ 
+6 & Rodriguez, Montero & $1,251$ & $749$ \\ 
+7 & Castro, Ramirez, Miranda & $663$ & $1,337$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Results: Detail}
+
+
+\begin{table}[H] \centering 
+
+
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} clccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & Team &Name & Rigth & Wrong \\ 
+\hline \\[-1.8ex] 
+1 & Prieto, Segura, Navarro & Gaviria & $394$ & $79$ \\ 
+2 & Acero, Pacheco, Saenz & Gaviria & $401$ & $78$ \\ 
+3 & Castro, Ramirez, Miranda & Gaviria & $194$ & $216$ \\ 
+\hline
+4 & Prieto, Segura, Navarro & Lopez & $443$ & $69$ \\ 
+5 & Acero, Pacheco, Saenz & Lopez & $458$ & $96$ \\ 
+6 & Castro, Ramirez, Miranda & Lopez & $145$ & $299$ \\ 
+\hline
+7 & Prieto, Segura, Navarro & Petro & $357$ & $78$ \\ 
+8 & Acero, Pacheco, Saenz & Petro & $366$ & $79$ \\ 
+9 & Castro, Ramirez, Miranda & Petro & $108$ & $237$ \\ 
+\hline
+10 & Prieto, Segura, Navarro & Uribe & $428$ & $152$ \\ 
+11 & Acero, Pacheco, Saenz & Uribe & $392$ & $130$ \\ 
+12 & Castro, Ramirez, Miranda & Uribe & $216$ & $585$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Next Week Presentations}
+
+
+\begin{itemize}
+  \item November 30th
+  \begin{enumerate}
+      \item Startup Failure (Rodriguez y Montero)
+      \item Covid-19 (Saenz)
+      \item Precios Propiedades (Gonzalez)
+    \end{enumerate}
+    \item December 2nd
+    \begin{enumerate}
+      \item Cambio Estructural (Rengifo)
+      \item Booktopia (Agudelo, Cepeda, Cifuentes, y Mosquera)
+      \item Rendimiento Educativo (Salazar, Cortes, Rojas, y Peña)
+      \end{enumerate}
+      \item December 3rd
+      \begin{enumerate}
+        \item Pobreza Multidimensional (Miranda)
+        \item Demanda de Energía (Ramírez y Castro)
+        \item Basketball (Segura, Prieto y Navarro)
+      \end{enumerate}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Final Submission}
+
+  \begin{itemize}
+  \item Final  submission is due on {\bf December 10th at 6 pm}. Upload it to your Repo, the presentation should be there as well.
+  \medskip
+  \item  The final document should not be longer than 5 (five) pages (not including the title page with abstract, and references). 
+  \medskip
+  \item {\bf This is worth 15\% of your grade.}
+\end{itemize}
+
+\end{frame}
+
+%----------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Final Submission}
+\begin{itemize}
+ \item When writing up the document, it should contain the following:
+  \begin{itemize}
+    
+    \item Title
+
+    \item Abstract (200 words limit)
+    \item Introduction. It should contain at least: the problem/research question clearly defined,  antecedents of your work, your value-added (i.e. why your project is interesting/novel/different), and a preview of  results and takeaways.
+    \item Data. Treat this section as an opportunity to present a compelling narrative to justify or defend your data choices, walk the reader through your reasoning of how you think you got the right data for the task, describe it accordingly with descriptive stats, graphs, etc.
+    \item Model. Present the model you are using.  Be sure to argue why this is the best model for your task. When writing this section think on the following questions: did you apply other models? Is this model the most accurate at predicting?  Is this the only model that you can use? etc. 
+    \item Results. Here you should present your results. I understand that a semester is a short time to have a full paper, so preliminary results are fine. 
+    \item Conclusions and recommendations. In this section, you should state the main takeaways of your work.
+  \end{itemize}
+  \end{itemize}
+  \end{frame}
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+\end{document}
+%----------------------------------------------------------------------%
+%----------------------------------------------------------------------%
+
