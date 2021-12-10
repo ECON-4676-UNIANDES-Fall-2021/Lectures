@@ -222,7 +222,7 @@
 
 \begin{itemize}
 
-\item Eigenvalues and eigenvectors associated to the covariance matrix of the data $X_{n\times p}$, $V(X)=S$
+\item Eigenvalues and eigenvectors associated to the covariance matrix of the data $X_{n\times p}$, $V(X)=S_{p\times p}$
   
   \begin{align}
   \lambda_1 = \delta_1 S \delta'_1 
@@ -542,7 +542,7 @@
     \medskip
     \item This then allows the regression to make use of the underlying factor structure in $X$ and still pick up individual $X_j$ signals that are related to $y$. 
     \medskip
-    \item This hybrid strategy is a solution to the disadvantage disadvantage of PCR mentioned earlier—that it will only pick up dominant sources of variation in $X$. 
+    \item This hybrid strategy is a solution to the disadvantage of PCR mentioned earlier—that it will only pick up dominant sources of variation in $X$. 
   \end{itemize}
 
 
@@ -568,7 +568,7 @@
       \item Alternatively, regress $y$ on $f$  and $Xs$ to allow simultaneous selection between PCs and raw inputs. 
       \medskip
     \end{itemize}
-  \item To predict for a new $X_{new}$, use the rotations from step 1 to get $f = \phi X_{new}$ and then feed these scores into the regression fit from step 2. 
+  \item To predict for a new $X_{new}$, use the rotations from step 1 to get $f = \delta X_{new}$ and then feed these scores into the regression fit from step 2. 
   \end{enumerate}
 
 \end{itemize}
@@ -900,7 +900,7 @@
 \item Yes; 
 \medskip
 \pause
-\item It's known as supervised supervised factor modeling, and it is a useful big data technique. 
+\item It's known as supervised factor modeling, and it is a useful big data technique. 
 \medskip
 \item There is a big world of supervised factor modeling, and there are several algorithms for supervised adaptations of PCA.
 \medskip
@@ -951,7 +951,7 @@
   \medskip
   \item Fit the “forward” univariate linear regression $y_i = \alpha + \beta f_i + \epsilon_i$
   \medskip
-  \item Given a new $X$,we can predict $\hat{y}=\alpha + \beta X'\delta$
+  \item Given a new $X$,we can predict $\hat{y}=\hat{\alpha} + \hat{\beta} X'\delta$
 \end{enumerate}
 
 \end{itemize}
@@ -969,7 +969,7 @@
 \item We can use MapReduce:
 \medskip
 \begin{itemize}
-\item In the Map step, you produce $(x_ij, y_i)$ pairs that are indexed by the dimension key j; 
+\item In the Map step, you produce $(x_{ij}, y_i)$ pairs that are indexed by the dimension key j; 
 \medskip
 \item the Reduce step then runs univariate OLS for y on $x_j$ and returns $\delta_j$. 
 \medskip
@@ -1006,7 +1006,7 @@
 \item PLS Algorithm 
 \medskip
 \begin{enumerate}
-\item Begin by running MR algorithm as before for y on x.
+\item Begin by running MR algorithm as before for y on X.
 \medskip 
 \item Store the MR factor as $f_1$, the 1st PLS direction, and PLS(1) forward regression fitted values as $\hat{y}_1=\alpha + \beta_1 f_1)$
 \medskip 
